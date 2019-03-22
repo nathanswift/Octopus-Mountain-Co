@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author: MyString
+  body: MyString
+  star_count: 1
+  site_name: MyString
+  icon: MyString
+  site_url: MyString
+
+two:
+  author: MyString
+  body: MyString
+  star_count: 1
+  site_name: MyString
+  icon: MyString
+  site_url: MyString
