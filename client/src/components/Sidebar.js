@@ -53,7 +53,7 @@ class Sidebars extends React.Component {
             null
         }
           <MenuButton onClick={this.toggleMenu} style={{ display: 'flex !important'}}>
-              <FaDiceD20 style={{ height: '50px', width: '50px'}}/>
+              <FaDiceD20 style={{ height: '30px', width: '30px', marginLeft: '20px'}}/>
           </MenuButton>
         </Sidebar>
       </Fragment>
