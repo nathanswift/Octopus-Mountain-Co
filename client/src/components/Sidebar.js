@@ -1,77 +1,103 @@
-import React from 'react'
-import { Button, Sidebar, Icon, Menu, Segment, Header, Image } from 'semantic-ui-react'
+import React, {Fragment} from 'react'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import { FaDiceD20 } from 'react-icons/fa'
 
 class Sidebars extends React.Component {
-    state = { visible: false }
+   state = { visible: false }
 
-  handleHideClick = () => this.setState({ visible: false })
-  handleShowClick = () => this.setState({ visible: true })
-  handleSidebarHide = () => this.setState({ visible: false })
+  handleAbout = () => {
+    console.log('About')
+  }
+
+  handleServices = () => {
+    console.log('Services')
+  }
+
+  handleContact = () => {
+    console.log('Contact Info')
+  }
+
+  toggleMenu = () => this.setState({ visible: !this.state.visible })
 
   render() {
-    const { visible } = this.state
-
-    let bodyStyle = {
-      backgroundColor: '#1c1c1c',
-    }
-
-    let btnStyle = {
-      marginLeft: '125px',
-      marginTop: '50px',
-      color: 'white',
-      fontSize: '1.5em',
-      backgroundColor: '#1c1c1c',
-      opacity: '.7'
-    }
+    // const { visible } = this.state
 
 
     return (
-      <div style={bodyStyle}>
-          <div>
-          <Button style={btnStyle} disabled={visible} onClick={this.handleShowClick}>
-            <Icon name="align center" size="big" rotated="counter clockwise"></Icon>
-          </Button>
-          </div>
-
-          <Sidebar
-            as={Menu}
-            animation='overlay'
-            icon='labeled'
-            inverted
-            onHide={this.handleSidebarHide}
-            vertical
-            visible={visible}
-            width='thin'
-          >
-            <Menu.Item as='a'>
-              <Link to="/"><Icon name='home' /><br/>Home</Link>
-            </Menu.Item>
-            <Menu.Item as='a'>
-              <Link to="Contact"><Icon name='id badge outline' /><br/>Contact</Link>
-            </Menu.Item>
-            <Menu.Item as='a'>
-              <Link to="About"><Icon name='id badge outline' /><br/>About</Link>
-            </Menu.Item>
-            <Menu.Item as='a'>
-              <Link to="Services"><Icon name='id badge outline' /><br/>Services</Link>
-            </Menu.Item>
-            <Menu.Item as='a'>
-              <Link to="Works"><Icon name='address card outline' /> <br/>Works</Link>
-            </Menu.Item>
-            <Menu.Item as='a'>
-              <Link to="Dashboard"><Icon name='address card outline' /> <br/>Customer Portal</Link>
-            </Menu.Item>
-            <Menu.Item as='a'>
-              <Link to="Products"><Icon name='address card outline' /> <br/>Store</Link>
-            </Menu.Item>
-          </Sidebar>
-
-          <Sidebar.Pusher dimmed={visible}>
-          </Sidebar.Pusher>
-      </div>
+      <Fragment style={{display: 'flex !important'}}>
+        <Sidebar style={{ display: 'flex !important'}}>
+          {
+            this.state.visible ?
+            <SideBarStyles style={{display: 'flex !important'}} className="container">
+              <SidebarTitle>Octopus Mountain Co</SidebarTitle>
+              <ButtonStyle className="btn"
+                onClick={() => this.handleAbout()}
+              >About   |</ButtonStyle>
+              <ButtonStyle className="btn"
+                onClick={() => this.handleServices()}  
+              >Services   |</ButtonStyle>
+              <ButtonStyle className="btn"
+                onClick={() => this.handleContact()}
+              >Contact</ButtonStyle>
+              <SidebarText style={{display: 'flex !important'}}>
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. 
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. 
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+              </SidebarText>
+            </SideBarStyles>
+        :
+            null
+        }
+          <MenuButton onClick={this.toggleMenu} style={{ display: 'flex !important'}}>
+              <FaDiceD20 style={{ height: '50px', width: '50px'}}/>
+          </MenuButton>
+        </Sidebar>
+      </Fragment>
     )
   }
 }
+
+const Sidebar = styled.div`
+  display: flex !important
+  width: 60% !important
+  height: max-content
+`
+const SideBarStyles = styled.div`
+  display: flex
+  border: 1px solid black !important
+  margin-top: -8px
+  margin-left: -8px
+  width: 100% !important
+  height: 950px
+`
+const MenuButton = styled.div`
+  margin-top: 30px
+`
+
+const SidebarTitle = styled.h2`
+  width: 400px
+  transform: translate(-530px, 100px) rotate(90deg)
+`
+
+const ButtonStyle = styled.div`
+  display: flex !important
+  border: 1px solid black
+  width: 100px
+  height: 60px
+  transform: translate(-75px, 150px)
+`
+const SidebarText = styled.div`
+  display: flex !important
+  border: 1px solid black
+  width: 500px
+  height: 400px
+  margin-top: 300px
+  transform: translate(-80%)
+`
+
 
 export default Sidebars
