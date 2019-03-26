@@ -2,35 +2,41 @@ import React, {Fragment} from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { FaDiceD20 } from 'react-icons/fa'
+import ScrollLock from 'react-scrolllock'
 
 class Sidebars extends React.Component {
-   state = { visible: false }
+   state = { visible: false,
+             sidebarText: `Bringing a sense of peace to all your business needs! Choose OM`,
+             lockScroll: false
+  }
 
   handleAbout = () => {
-    console.log('About')
+    this.setState({ sidebarText: `This is our About info`})
   }
 
   handleServices = () => {
-    console.log('Services')
+    this.setState({ sidebarText: 'These are our services'})
   }
 
   handleContact = () => {
-    console.log('Contact Info')
+    this.setState({ sidebarText: `This is our contact info.`})
   }
 
-  toggleMenu = () => this.setState({ visible: !this.state.visible })
+  toggleMenu = () => {
+    this.setState({ visible: !this.state.visible, lockScroll: !this.state.lockScroll })
+  }
 
   render() {
     // const { visible } = this.state
 
 
     return (
-      <Fragment style={{display: 'flex !important'}}>
-        <Sidebar style={{ display: 'flex !important'}}>
+      <Fragment>
+        <Sidebar  style={{ display: 'flex !important'}}>
           {
             this.state.visible ?
             <SideBarStyles style={{display: 'flex !important'}} className="container">
-              <SidebarTitle>Octopus Mountain Co</SidebarTitle>
+              <SidebarTitle onClick={this.toggleMenu} as={Link} to={'/'} style={{textDecoration: 'none'}}>Octopus Mountain Co</SidebarTitle>
               <ButtonStyle className="btn"
                 onClick={() => this.handleAbout()}
               >About   |</ButtonStyle>
@@ -41,21 +47,17 @@ class Sidebars extends React.Component {
                 onClick={() => this.handleContact()}
               >Contact</ButtonStyle>
               <SidebarText style={{display: 'flex !important'}}>
-                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. 
-                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. 
-                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                {this.state.sidebarText}
               </SidebarText>
             </SideBarStyles>
         :
             null
         }
-          <MenuButton onClick={this.toggleMenu} style={{ display: 'flex !important'}}>
+          <MenuButton onClick={this.toggleMenu}  style={{ display: 'flex !important'}}>
               <FaDiceD20 style={{ height: '30px', width: '30px', marginLeft: '20px'}}/>
           </MenuButton>
         </Sidebar>
+        <ScrollLock isActive={this.state.lockScroll} />
       </Fragment>
     )
   }
@@ -68,6 +70,8 @@ const Sidebar = styled.div`
 `
 const SideBarStyles = styled.div`
   display: flex
+  position: fixed !important
+  z-index: 2
   border: 1px solid black !important
   margin-top: -8px
   margin-left: -8px
@@ -76,6 +80,8 @@ const SideBarStyles = styled.div`
 `
 const MenuButton = styled.div`
   margin-top: 30px
+  position: fixed !important
+  z-index: 2
 `
 
 const SidebarTitle = styled.h2`
