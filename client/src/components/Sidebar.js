@@ -70,7 +70,6 @@ const Sidebar = styled.div`
 `
 const SideBarStyles = styled.div`
   display: flex
-  position: fixed !important
   z-index: 2
   border: 1px solid black !important
   margin-top: -8px
