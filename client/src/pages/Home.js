@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FaAngleDown, FaFacebookF, FaInstagram, FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaAngleDown } from 'react-icons/fa'
 import Works from './Works'
 
 
@@ -22,14 +22,11 @@ export default class Home extends React.Component {
         if (this.state.height > 200 && count === 0) {
           window.scrollTo(0,0)
           this.setState({ scrolled: true, count: 1, count2: 1})
-          console.log('the first one')
         } else if (this.state.height > 200 && count === 1) {
           window.scrollTo(0,0)
-          console.log('this is 2')
         } else if (this.state.height > 190 && count2 === 1) {
           window.scrollTo(0, 0)
           this.setState({ count: 2 })
-          console.log('last one!')
         }
       }
 
@@ -63,13 +60,6 @@ export default class Home extends React.Component {
             )
           }
           })()}
-          <Footer style={{display: 'flex !important'}}>
-            <FaFacebookF />
-            <FaInstagram />
-            <FaTwitter />
-            <FaGithub />
-            <FaLinkedin />
-          </Footer>
         </div>
       </PageBody>
     )
@@ -106,14 +96,5 @@ const ScrollIcon = styled.h3`
 
 const PageBody = styled.div`
   width: 100%
-  height: 2000px
-`
-
-const Footer = styled.table`
-  width: 100%
-  display: flex !important
-  align-content: flex-end !important
-  justify-content: center !important
-  margin-left: -20px
-  transform: translate(0, 100px)
+  height: 1000px
 `
