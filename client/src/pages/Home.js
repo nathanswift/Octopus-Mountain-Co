@@ -4,31 +4,41 @@ import { FaAngleDown } from 'react-icons/fa'
 
 
 export default class Home extends React.Component {
-  state = { scrollTop: 0 }
+  state = { height: window.pageYOffset }
 
-    componentDidMount() {
-      window.addEventListener('scroll', this.handleScroll)
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll = () => {
+    this.setState({ height: window.pageYOffset })
+
+    if (this.state.height > 100) {
+      this.setState({ scrolled: !this.state.scrolled })
     }
+  }
 
-    handleScroll = () => {
-        console.log('Scrolled!')
-    }
-    
 
-    render() {
-        return (
-          <div style={{ display: 'flex !important'}}>
-            <div style={{ display: 'flex !important' }} onScroll={this.handleScroll} >
-                <HeaderText as="h1" textAlign="center">Octopus Mountain Co</HeaderText>
+  render() {
+    return (
+      <div style={{ display: 'flex !important' }}>
+        {this.state.scrolled ?
+          <div>tits</div>
+          :
+          <div>
+            <div style={{ display: 'flex !important' }}>
+              <HeaderText as="h1" textAlign="center">Octopus Mountain Co</HeaderText>
             </div>
-            <div style={{ display: 'flex !important' }}> 
+            <div style={{ display: 'flex !important' }}>
               <ScrollIcon>Scroll Down
-                <FaAngleDown/>
+                <FaAngleDown />
               </ScrollIcon>
             </div>
           </div>
-        )
-    }
+        }
+      </div>
+    )
+  }
 }
 
 const HeaderText = styled.div`

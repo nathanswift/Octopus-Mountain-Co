@@ -2,9 +2,10 @@ import React, {Fragment} from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { FaDiceD20 } from 'react-icons/fa'
+import ScrollLock, { TouchScrollable } from 'react-scrolllock'
 
 class Sidebars extends React.Component {
-   state = { visible: false }
+   state = { visible: false, sidebarText: '', lockScroll: false }
 
   handleAbout = () => {
     console.log('About')
@@ -18,14 +19,14 @@ class Sidebars extends React.Component {
     console.log('Contact Info')
   }
 
-  toggleMenu = () => this.setState({ visible: !this.state.visible })
+  toggleMenu = () => this.setState({ visible: !this.state.visible, lockScroll: !this.state.lockScroll })
 
   render() {
     // const { visible } = this.state
 
 
     return (
-      <Fragment style={{display: 'flex !important'}}>
+      <Fragment>
         <Sidebar style={{ display: 'flex !important'}}>
           {
             this.state.visible ?
@@ -41,12 +42,7 @@ class Sidebars extends React.Component {
                 onClick={() => this.handleContact()}
               >Contact</ButtonStyle>
               <SidebarText style={{display: 'flex !important'}}>
-                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. 
-                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. 
-                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                {this.state.sidebarText}
               </SidebarText>
             </SideBarStyles>
         :
@@ -56,6 +52,7 @@ class Sidebars extends React.Component {
               <FaDiceD20 style={{ height: '50px', width: '50px'}}/>
           </MenuButton>
         </Sidebar>
+        <ScrollLock isActive={this.state.lockScroll} />
       </Fragment>
     )
   }
