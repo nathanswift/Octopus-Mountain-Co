@@ -1,12 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FaAngleDown, FaFacebookF, FaInstagram, FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
+import Works from './Works'
 
 
 export default class Home extends React.Component {
   state = {
     height: window.pageYOffset,
-    scrolled: false
+    scrolled: false,
+    count: 0,
+    count2: 0
   }
 
     componentDidMount() {
@@ -14,41 +17,52 @@ export default class Home extends React.Component {
     }
 
     handleScroll = () => {
+      const { count, count2 } = this.state
       this.setState({ height: window.pageYOffset })
-        if (this.state.height > 200) {
+        if (this.state.height > 200 && count === 0) {
           window.scrollTo(0,0)
-          this.setState({ scrolled: true})
+          this.setState({ scrolled: true, count: 1, count2: 1})
+          console.log('the first one')
+        } else if (this.state.height > 200 && count === 1) {
+          window.scrollTo(0,0)
+          console.log('this is 2')
+        } else if (this.state.height > 190 && count2 === 1) {
+          window.scrollTo(0, 0)
+          this.setState({ count: 2 })
+          console.log('last one!')
         }
       }
-
-
-    // if !scrollTop render the next home page snippet and hide scroll down option - set to hidden to keep page position 
-    // else if the scrollTop is hitting on the initial homepage - make the scroll icon pulse
-    // if scrollTop go back to the last code snippet
-    
 
   render() {
     return (
       <PageBody>
         <div style={{ display: 'flex !important' }}>
-          {this.state.scrolled ?
-            <div>
-              <div style={{ display: 'hidden !important', position: 'fixed !important' }}>
-                <HeaderText2 as="h1" textAlign="center">Something about having peace in business choices om lalala</HeaderText2>
+          {(() => {
+          switch (this.state.count) {
+            case 1: return (
+              <div>
+                <div style={{ display: 'hidden !important', position: 'fixed !important' }}>
+                  <HeaderText2 as="h1" textAlign="center">Something about having peace in business choices om lalala</HeaderText2>
+                </div>
               </div>
-            </div>
-            :
-            <div>
-            <div style={{ display: 'flex !important' }}>
-              <HeaderText as="h1" textAlign="center">Octopus Mountain Co</HeaderText>
-            </div>
-            <div style={{ display: 'flex !important' }}>
-              <ScrollIcon>Scroll Down
-                <FaAngleDown />
-              </ScrollIcon>
-            </div>
-          </div>
+            )
+            case 2:  return ( 
+              <Works />
+              )
+            default: return(
+              <div>
+                <div style={{ display: 'flex !important' }}>
+                  <HeaderText as="h1" textAlign="center">Octopus Mountain Co</HeaderText>
+                </div>
+                <div style={{ display: 'flex !important' }}>
+                  <ScrollIcon>Scroll Down
+                    <FaAngleDown />
+                  </ScrollIcon>
+                </div>
+              </div>
+            )
           }
+          })()}
           <Footer style={{display: 'flex !important'}}>
             <FaFacebookF />
             <FaInstagram />
