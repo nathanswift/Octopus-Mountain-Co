@@ -22,14 +22,12 @@ export default class Home extends React.Component {
         if (this.state.height > 200 && count === 0) {
           window.scrollTo(0,0)
           this.setState({ scrolled: true, count: 1, count2: 1})
-          console.log('the first one')
         } else if (this.state.height > 200 && count === 1) {
           window.scrollTo(0,0)
-          console.log('this is 2')
         } else if (this.state.height > 190 && count2 === 1) {
           window.scrollTo(0, 0)
           this.setState({ count: 2 })
-          console.log('last one!')
+          window.removeEventListener('scroll', this.handleScroll)
         }
       }
 
