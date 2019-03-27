@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import styled from 'styled-components'
 import { FaAngleDown } from 'react-icons/fa'
 import Works from './Works'
@@ -46,6 +47,7 @@ export default class Home extends React.Component {
             )
             case 2:  return ( 
               <Works />
+              // figure something out here because the two lock scrolls don't work unless the scroll takes you to the /works path
               )
             default: return(
               <div>
