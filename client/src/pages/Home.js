@@ -2,7 +2,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import styled from 'styled-components'
 import { FaAngleDown } from 'react-icons/fa'
-import HomeShow from './HomeShow'
+import HomeShow from '../components/HomeShow'
 
 
 export default class Home extends React.Component {

@@ -9,7 +9,7 @@ import Dashboard from './pages/Dashboard'
 import Products from './pages/Products'
 import Services from './pages/Services'
 import Works from './pages/Works'
-import HomeShow from './pages/HomeShow'
+import HomeShow from './components/HomeShow'
 import Login from './components/Login'
 import Register from './components/Register'
 
