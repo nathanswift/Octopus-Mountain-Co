@@ -1,10 +1,10 @@
 import React from 'react'
 
-const NoMatch = () => (
-    <div>
 
-    <div>Page Not Found</div>
-    <a href='/'>Home</a>
+const NoMatch = () => (
+    <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div style={{display: 'flex'}}>Page Not Found</div>
+        <a href='/' style={{display: 'flex'}}>Home</a>
     </div>
 )
 
