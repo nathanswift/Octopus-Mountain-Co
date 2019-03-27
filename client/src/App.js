@@ -8,8 +8,9 @@ import Dashboard from './pages/Dashboard'
 import Products from './pages/Products'
 import Services from './pages/Services'
 import Works from './pages/Works'
-import WorksShow from './pages/WorksShow'
-import UserLogin from './components/UserLogin'
+import HomeShow from './pages/HomeShow'
+import Login from './components/Login'
+import Register from './components/Register'
 
 export default class App extends React.Component {
 
@@ -20,11 +21,12 @@ export default class App extends React.Component {
         <Sidebar />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path='/HomeShow' component={HomeShow} />
             <Route exact path="/Works" component={Works} />
-            <Route exact path='/WorksShow' component={WorksShow} />
             <Route exact path="/Contact" component={Contact} />
             <Route exact path="/Dashboard" component={Dashboard} />
-            <Route exact path="/UserLogin" component={UserLogin} />
+            <Route exact path="/Login" component={Login} />
+            <Route exact path="/Register" component={Register} />
             <Route exact path="/Products" component={Products} />
           </Switch>
         <Footer />
