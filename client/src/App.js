@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import NoMatch from './pages/NoMatch'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -28,6 +29,7 @@ export default class App extends React.Component {
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Register" component={Register} />
             <Route exact path="/Products" component={Products} />
+            <Route component={NoMatch} />
           </Switch>
         <Footer />
       </div>
