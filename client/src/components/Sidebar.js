@@ -49,6 +49,10 @@ class Sidebars extends React.Component {
               <SidebarText style={{display: 'flex !important'}}>
                 {this.state.sidebarText}
               </SidebarText>
+              {/* Insert if else logic to say that if the login containes a token than display the user name */}
+              <Link to="/Login">
+              <LoginButton onClick={this.toggleMenu} className="btn">Login</LoginButton>
+              </Link>
             </SideBarStyles>
         :
             null
@@ -102,6 +106,12 @@ const SidebarText = styled.div`
   height: 400px
   margin-top: 300px
   transform: translate(-80%)
+`
+const LoginButton = styled.div`
+display: flex !important
+  border: 1px solid black
+  width: 100px
+  height: 60px
 `
 
 
