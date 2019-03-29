@@ -2,7 +2,7 @@ class Api::WorksController < ApplicationController
   before_action :set_work, only: [:show, :update, :destroy]
 
   def index
-    render json: Works.all
+    render json: Work.all
   end
 
   def show

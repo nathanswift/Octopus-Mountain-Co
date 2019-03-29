@@ -1,8 +1,9 @@
 import React, {Fragment} from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import { Link, withRouter } from 'react-router-dom'
 import { FaDiceD20 } from 'react-icons/fa'
+import styled from 'styled-components'
 import ScrollLock from 'react-scrolllock'
+import { AuthConsumer } from '../providers/AuthProvider';
 
 class Sidebars extends React.Component {
    state = { visible: false,
@@ -26,13 +27,39 @@ class Sidebars extends React.Component {
     this.setState({ visible: !this.state.visible, lockScroll: !this.state.lockScroll })
   }
 
+  onClick = () => {
+    debugger
+    this.toggleMenu()
+    this.props.auth.handleLogout(this.props.history)
+  }
+
+  NavItems = () => {
+    const { auth: { user } } = this.props
+
+    if (user) {
+      return (
+        <LoginButton
+        name="LogOut"
+        onClick={this.onClick}
+        >LogOut</LoginButton>
+      )
+    } else {
+      return(
+        <Link to="/Login">
+        <LoginButton onClick={this.toggleMenu} className="btn">Login</LoginButton>
+        </Link>
+      )
+    }
+  }
+
+
   render() {
     // const { visible } = this.state
 
 
     return (
       <Fragment>
-        <Sidebar  style={{ display: 'flex !important'}}>
+        <Sidebar style={{ display: 'flex !important'}}>
           {
             this.state.visible ?
             <SideBarStyles style={{display: 'flex !important'}} className="container">
@@ -49,20 +76,30 @@ class Sidebars extends React.Component {
               <SidebarText style={{display: 'flex !important'}}>
                 {this.state.sidebarText}
               </SidebarText>
-              {/* Insert if else logic to say that if the login containes a token than display the user name */}
-              <Link to="/Login">
-              <LoginButton onClick={this.toggleMenu} className="btn">Login</LoginButton>
-              </Link>
+              { this.NavItems()}
             </SideBarStyles>
         :
             null
         }
           <MenuButton onClick={this.toggleMenu}  style={{ display: 'flex !important'}}>
-              <FaDiceD20 style={{ height: '30px', width: '30px', marginLeft: '20px'}}/>
+                <FaDiceD20 style={{ height: '30px', width: '30px', marginLeft: '20px'}}/>
           </MenuButton>
         </Sidebar>
         <ScrollLock isActive={this.state.lockScroll} />
       </Fragment>
+    )
+  }
+}
+
+class ConnectSidebars extends React.Component {
+
+  render() {
+    return(
+      <AuthConsumer>
+        { value => 
+          <Sidebars { ...this.props } auth={value}/>
+        }
+      </AuthConsumer>
     )
   }
 }
@@ -115,4 +152,4 @@ display: flex !important
 `
 
 
-export default Sidebars
+export default withRouter(ConnectSidebars)

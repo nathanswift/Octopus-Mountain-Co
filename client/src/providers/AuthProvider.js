@@ -11,7 +11,7 @@ export class AuthProvider extends React.Component {
     axios.post('/api/auth', user)
       .then( res => {
         this.setState({ user: res.data })
-        history.push('/')
+        history.push('/Login')
       })
       .catch( res => {
         console.log(res)
@@ -22,7 +22,7 @@ export class AuthProvider extends React.Component {
     axios.post('/api/auth/sign_in', user)
       .then( res => {
         this.setState({ user: res.data.data })
-        history.push('/')
+        history.push('/Dashboard')
       })
       .catch( res => {
         console.log(res)
@@ -33,7 +33,7 @@ export class AuthProvider extends React.Component {
     axios.delete('/api/auth/sign_out')
       .then ( res => {
         this.setState({ user: null })
-        history.push('/login')
+        history.push('/')
       })
       .catch( res => {
         console.log(res)
