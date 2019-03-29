@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-scroll-lock": "^2.6.1",
+    "devise-axios": "^1.0.24",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-icons": "^3.5.0",
