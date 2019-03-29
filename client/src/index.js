@@ -5,8 +5,11 @@ import * as serviceWorker from './serviceWorker'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { AuthProvider } from './providers/AuthProvider'
 import { initMiddleware } from 'devise-axios'
+import ReactGA from 'react-ga'
 
 initMiddleware()
+
+ReactGA.initialize('UA-137247521-1')
 
 ReactDOM.render(
   <AuthProvider>
