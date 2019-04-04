@@ -25,6 +25,7 @@ class Sidebars extends React.Component {
 
   toggleMenu = () => {
     this.setState({ visible: !this.state.visible, lockScroll: !this.state.lockScroll })
+    window.scrollTo(0, 0)
   }
 
   onClick = () => {
