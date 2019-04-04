@@ -13,7 +13,6 @@ class HomeShow extends React.Component {
   }
 
   render() {
-
     return (
       <Segment as={HeaderTxt} placeholder>
         <Image as={CatImage} centered src='https://i.pinimg.com/originals/0e/8f/e5/0e8fe5dac3d7bdb5e3bd58d7491ba310.jpg' />
