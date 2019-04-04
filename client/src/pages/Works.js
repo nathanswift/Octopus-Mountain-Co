@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import WorksShow from './WorksShow'
 import Map from '../assets/images/AltaMap.png'
 
 class Works extends React.Component {
@@ -39,9 +38,9 @@ class Works extends React.Component {
 
 const WorksCard = styled.div`
   display: flex !important
-  margin-left: 200px
-  width: 200px
-  height: 400px
+  margin-left: 35em
+  width: 15em
+  height: 30em
   justify-content: center !important
   text-align: center
 `

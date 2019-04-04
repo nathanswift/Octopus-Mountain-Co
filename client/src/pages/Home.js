@@ -1,9 +1,7 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
 import styled from 'styled-components'
 import { FaAngleDown } from 'react-icons/fa'
 import HomeShow from '../components/HomeShow'
-
 
 export default class Home extends React.Component {
   state = {
@@ -74,7 +72,7 @@ const HeaderText = styled.div`
   align-items: center !important
   justify-content: center !important
   width: 100% !important
-  height: 300px !important
+  height: 13em !important
   margin: auto !important
   transform: translate(-2%, 30%)
 `
@@ -83,9 +81,9 @@ const HeaderText2 = styled.div`
   align-items: center !important
   justify-content: center !important
   width: 100% !important
-  height: 400px !important
+  height: 13.000em !important
   margin: auto !important
-  margin-bottom: 200px !important
+  margin-bottom: 12.500em !important
   transform: translate(-2%, 30%)
 `
 
@@ -99,5 +97,5 @@ const ScrollIcon = styled.h3`
 
 const PageBody = styled.div`
   width: 100%
-  height: 1000px
+  height: 62.500em
 `

@@ -82,7 +82,7 @@ class Sidebars extends React.Component {
             null
         }
           <MenuButton onClick={this.toggleMenu}  style={{ display: 'flex !important'}}>
-                <FaDiceD20 style={{ height: '30px', width: '30px', marginLeft: '20px'}}/>
+                <FaDiceD20 style={{ height: '2em', width: '2em', marginLeft: '1em'}}/>
           </MenuButton>
         </Sidebar>
         <ScrollLock isActive={this.state.lockScroll} />
@@ -113,42 +113,44 @@ const SideBarStyles = styled.div`
   display: flex
   z-index: 2
   border: 1px solid black !important
-  margin-top: -8px
-  margin-left: -8px
+  margin-top: -0.49em
+  margin-left: -0.5em
   width: 100% !important
   height: 950px
 `
 const MenuButton = styled.div`
-  margin-top: 30px
+  margin-top: 2em
   position: fixed !important
   z-index: 2
 `
 
 const SidebarTitle = styled.h2`
-  width: 400px
-  transform: translate(-530px, 100px) rotate(90deg)
+  width: 20em
+  transform: translate(-33em, 10em) rotate(90deg)
 `
 
 const ButtonStyle = styled.div`
   display: flex !important
   border: 1px solid black
-  width: 100px
-  height: 60px
-  transform: translate(-75px, 150px)
+  width: 10.4em
+  height: 3em
+  transform: translate(3.59em, 12em)
 `
 const SidebarText = styled.div`
   display: flex !important
   border: 1px solid black
-  width: 500px
-  height: 400px
-  margin-top: 300px
+  width: 32em
+  height: 27em
+  margin-top: 18em
   transform: translate(-80%)
 `
 const LoginButton = styled.div`
-display: flex !important
-  border: 1px solid black
-  width: 100px
-  height: 60px
+  display: flex !important
+  align-items: center
+  justify-content: center
+  border: .1em solid black
+  width: 6em
+  height: 4em
 `
 
 

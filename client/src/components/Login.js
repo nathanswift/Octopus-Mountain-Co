@@ -64,15 +64,15 @@ export default class ConnectedLogin extends React.Component {
 
 const FormContainer = styled.div`
   display: flex !important
-  width: 500px
-  height: 700px
+  width: 40em
+  height: 45em
   justify-content: center !important
   align-items: center !important
 `
 
 const SubmitButton = styled.div`
-  width: 100px
-  height: 50px
-  margin-top: 20px
+  width: 5em
+  height: 3em
+  margin-top: 1em
   background: red
 `
