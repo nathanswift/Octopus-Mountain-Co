@@ -30,8 +30,10 @@ const Dashboard = () => (
 
 
 const DashBut = styled.div`
-  height: 100px
-  width: 200px
+  height: 1em
+  width: 1em
+  margin-left: 8em
+  margin-top: 6em
   display: flex !important
   justify-content: center
 `
