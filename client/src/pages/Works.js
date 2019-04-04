@@ -21,20 +21,20 @@ class Works extends React.Component {
   render() {
     const { works } = this.state
     return(
-      <Container>
+      <ContainerStyles>
         { works.map( work => (
           <Link
             to={{ pathname: '/WorksShow', state: { ...work }}}
           >
-            <Segment placeholder>
+            <SegmentStyles placeholder>
               <HeaderStyles>
                 {work.name}
               </HeaderStyles>
                 <ImageStyle fluid src={work.image_url} alt=""/>
-            </Segment>      
+            </SegmentStyles>      
           </Link>
         ))}
-      </Container>
+      </ContainerStyles>
     )
   }
 }
@@ -44,10 +44,19 @@ const ImageStyle = styled(Image)`
   height: 30em !important
   z-index: 0
 `
-const HeaderStyles = styled(Header)`
+const HeaderStyles = styled.span`
   color: white !important
   z-index: 2
   transform: translate(0, 10em)
+`
+const ContainerStyles = styled(Container)`
+  opacity: .5
+`
+const SegmentStyles = styled(Segment)`
+  border: none !important
+  width: 80%
+  background: transparent !important 
+  transform: translate(8em)
 `
 
 
