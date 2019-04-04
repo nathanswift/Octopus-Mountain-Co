@@ -97,5 +97,5 @@ const ScrollIcon = styled.h3`
 
 const PageBody = styled.div`
   width: 100%
-  height: 62.500em
+  height: 70em
 `

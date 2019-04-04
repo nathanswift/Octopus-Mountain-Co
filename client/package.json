@@ -8,6 +8,7 @@
     "devise-axios": "^1.0.24",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-dropzone": "^10.1.0",
     "react-ga": "^2.5.7",
     "react-icons": "^3.5.0",
     "react-router-dom": "^5.0.0",

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Map from '../assets/images/AltaMap.png'
+import { Button, Container, Header, Icon, Image, Segment } from 'semantic-ui-react'
 
 class Works extends React.Component {
   state = { works: [] }
@@ -20,29 +21,33 @@ class Works extends React.Component {
   render() {
     const { works } = this.state
     return(
-      <Fragment>
+      <Container>
         { works.map( work => (
-          <WorksCard>
-            <Link
-              to={{ pathname: '/WorksShow', state: { ...work }}}
-            >
-              <h1>{work.name}</h1>
-              <img src={work.image_url} alt=""/>
-            </Link>
-          </WorksCard>
+          <Link
+            to={{ pathname: '/WorksShow', state: { ...work }}}
+          >
+            <Segment placeholder>
+              <HeaderStyles>
+                {work.name}
+              </HeaderStyles>
+                <ImageStyle fluid src={work.image_url} alt=""/>
+            </Segment>      
+          </Link>
         ))}
-      </Fragment>
+      </Container>
     )
   }
 }
 
-const WorksCard = styled.div`
-  display: flex !important
-  margin-left: 35em
-  width: 15em
-  height: 30em
-  justify-content: center !important
-  text-align: center
+const ImageStyle = styled(Image)`
+  width: 100% !important
+  height: 30em !important
+  z-index: 0
+`
+const HeaderStyles = styled(Header)`
+  color: white !important
+  z-index: 2
+  transform: translate(0, 10em)
 `
 
 

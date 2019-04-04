@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { AuthProvider } from './providers/AuthProvider'
 import { initMiddleware } from 'devise-axios'
 import ReactGA from 'react-ga'
+import 'semantic-ui-css/semantic.min.css'
 
 initMiddleware()
 

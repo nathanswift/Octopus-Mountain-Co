@@ -13,10 +13,11 @@ import HomeShow from './components/HomeShow'
 import Login from './components/Login'
 import Register from './components/Register'
 import FetchUser from './components/FetchUser'
-import DashboardUsers from './components/DashboardUsers'
+import Profile from './components/Profile'
 import DashboardMessages from './components/DashboardMessages'
 import DashboardAnalytics from './components/DashboardAnalytics'
 import DashboardPayments from './components/DashboardPayments'
+import ProtectedRoute from './components/ProtectedRoute'
 
 
 export default class App extends React.Component {
@@ -33,11 +34,11 @@ export default class App extends React.Component {
               <Route exact path="/Works" component={Works} />
               <Route exact path="/WorksShow" component={WorksShow} />
               <Route exact path="/Contact" component={Contact} />
-              <Route exact path="/Dashboard" component={Dashboard} />
-              <Route exact path="/Dashboard/Users" component={DashboardUsers} />
-              <Route exact path="/Dashboard/Messages" component={DashboardMessages} />
-              <Route exact path="/Dashboard/Analytics" component={DashboardAnalytics} />
-              <Route exact path="/Dashboard/Payments" component={DashboardPayments} />
+              <ProtectedRoute exact path="/Dashboard" component={Dashboard} />
+              <ProtectedRoute exact path="/Profile" component={Profile} />
+              <ProtectedRoute exact path="/Dashboard/Messages" component={DashboardMessages} />
+              <ProtectedRoute exact path="/Dashboard/Analytics" component={DashboardAnalytics} />
+              <ProtectedRoute exact path="/Dashboard/Payments" component={DashboardPayments} />
               <Route exact path="/Login" component={Login} />
               <Route exact path="/Register" component={Register} />
               <Route exact path="/Products" component={Products} />

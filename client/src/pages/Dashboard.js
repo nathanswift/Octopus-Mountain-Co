@@ -5,9 +5,9 @@ import { FaDribbble } from 'react-icons/fa';
 
 const Dashboard = () => (
   <div>
-    <Link to="/Dashboard/Users">
+    <Link to="/Profile">
       <DashBut>
-        Users
+        Profile
       </DashBut>
     </Link>
     <Link to="/Dashboard/Messages">
@@ -28,6 +28,11 @@ const Dashboard = () => (
   </div>
 )
 
+// client
+// give a display of all the dashboard users
+// set up state where Om can recieve an alert when a message has been stored in our db
+// allow us to route our payment to the om bank account
+// allows us to leave a message for client and see their response
 
 const DashBut = styled.div`
   height: 1em
