@@ -17,7 +17,7 @@ const SegmentExamplePlaceholderGrid = () => (
 )
 
 const videoOptions = {
-    src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+    src: 'https://fpdl.vimeocdn.com/vimeo-prod-skyfire-std-us/01/1082/6/155411596/481480321.mp4?token=1554452686-0x5dbfb8c4bfe4edba77a98ffccedd13ae3f12f1f8',
     autoPlay: true,
     loop: true,
     muted: true
@@ -26,6 +26,7 @@ const style = {
     width: '100vw',
     height: '100vh',
     position: 'fixed',
+    opacity: .9,
     margin: 'auto',
     top: '0vh',
     left: '0vw',
