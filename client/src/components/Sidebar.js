@@ -114,11 +114,10 @@ const Sidebar = styled.div`
 const SideBarStyles = styled.div`
   display: flex
   z-index: 2
-  background-color: #AA4B39
   margin-top: -0.49em
   margin-left: -0.5em
   width: 100% !important
-  height: 950px
+  height: 80em
 `
 const MenuButton = styled.div`
   margin-top: 2em
@@ -128,14 +127,14 @@ const MenuButton = styled.div`
 
 const SidebarTitle = styled.h2`
   width: 20em
-  transform: translate(-33em, 10em) rotate(90deg)
+  transform: translate(-40em, 10em) rotate(90deg)
 `
 
 const ButtonStyle = styled.div`
   display: flex !important
   width: 10.4em
   height: 3em
-  transform: translate(10em, 16em)
+  transform: translate(10em, 20em)
 `
 const SidebarText = styled.div`
   display: flex !important
@@ -144,7 +143,7 @@ const SidebarText = styled.div`
   width: 32em
   height: 20em
   margin-top: 16em
-  transform: translate(-10em, 3em)
+  transform: translate(-10em, 7em)
 `
 const LoginButton = styled.div`
   display: flex !important
