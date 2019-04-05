@@ -1,9 +1,10 @@
 import React from 'react';
-import { Segment, Icon, Button } from 'semantic-ui-react'
+import { Segment, Icon, Button, Image } from 'semantic-ui-react'
 import SegmentExamplePlaceholderGrid from './HeaderText'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import ScrollLock from 'react-scrolllock'
+import Paws from '../assets/images/octopuss-no-background.png'
 
 class HomeShow extends React.Component {
 
@@ -16,7 +17,7 @@ class HomeShow extends React.Component {
     return (
       <Segment as={HeaderTxt} placeholder>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '9m', alignItems: 'center' }}>
-          <img as={OctoImage} centered src='https://i.pinimg.com/originals/0e/8f/e5/0e8fe5dac3d7bdb5e3bd58d7491ba310.jpg' />
+          <Image as={OctoImage} src={Paws} />
         </div>
         <Button.Group style={{justifyContent: 'center'}}>
           <Link to='/Works'>
@@ -52,11 +53,11 @@ const HeaderTxt = styled(Segment)`
   border: none !important
 `
 
-const OctoImage = styled.div`
+const OctoImage = styled(Image)`
+  width: 50em !important
+  height: auto
   justify-content: center !important
   align-items: center !important
-  height: 5em
-  // transform: translate(230%, 225px)
 `
 
 export default HomeShow;
