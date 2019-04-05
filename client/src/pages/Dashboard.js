@@ -1,31 +1,50 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Header, Image, Segment } from 'semantic-ui-react'
 import { FaDribbble } from 'react-icons/fa';
+import { AuthConsumer } from '../providers/AuthProvider'
 
-const Dashboard = () => (
-  <div>
-    <Link to="/Profile">
-      <DashBut>
-        Profile
-      </DashBut>
-    </Link>
-    <Link to="/Dashboard/Messages">
-      <DashBut>
-        Messages
-      </DashBut>
-    </Link>
-    <Link to="/Dashboard/Analytics">
-      <DashBut>
-        Analytics
-      </DashBut>
-    </Link>
-    <Link to="/Dashboard/Payments">
-      <DashBut>
-        Payment
-      </DashBut>
-    </Link>
-  </div>
+class Dashboard extends React.Component {
+  render() {
+    return (
+      <Segment>
+        <div>
+          <Header as='h1' centered textAlign='center'>
+            <Image circular src={this.props.auth.user.image_url} /> {this.props.auth.user.name}
+          </Header>
+        </div>
+        <Link to="/Profile">
+          <DashBut>
+            Profile
+          </DashBut>
+        </Link>
+        <Link to="/Dashboard/Messages">
+          <DashBut>
+            Messages
+          </DashBut>
+        </Link>
+        <Link to="/Dashboard/Analytics">
+          <DashBut>
+            Analytics
+          </DashBut>
+        </Link>
+        <Link to="/Dashboard/Payments">
+          <DashBut>
+            Payment
+          </DashBut>
+        </Link>
+      </Segment>
+    )
+  }
+}
+
+const ConnectedDashboard = (props) => (
+  <AuthConsumer>
+    {auth =>
+      <Dashboard {...props} auth={auth} />
+    }
+  </AuthConsumer>
 )
 
 // client
@@ -43,4 +62,4 @@ const DashBut = styled.div`
   justify-content: center
 `
 
-export default Dashboard
+export default ConnectedDashboard
