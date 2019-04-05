@@ -14,7 +14,7 @@ class Sidebars extends React.Component {
   }
 
   handleAbout = () => {
-    this.setState({ sidebarText: `Development and Design Firm located in Salt Lake City Utah. When we're not crushing deadlines we're usually playing in the snow! We created this company to bring back peace of mind to business `})
+    this.setState({ sidebarText: `Development and Design Firm located in Salt Lake City Utah. When we're not crushing deadlines we're usually playing in the snow! We created this company to bring back peace of mind to business and to create an equal space of give and take. Our business is ran from philathanthropy, ethics, and openness. With every website built from Om we will give back to a local or global charity of your choice.`})
   }
 
   handleServices = () => {
@@ -108,13 +108,13 @@ class ConnectSidebars extends React.Component {
 
 const Sidebar = styled.div`
   display: flex !important
-  width: 60% !important
+  width: 58em
   height: max-content
 `
 const SideBarStyles = styled.div`
   display: flex
   z-index: 2
-  border: 1px solid black !important
+  background-color: #AA4B39
   margin-top: -0.49em
   margin-left: -0.5em
   width: 100% !important
@@ -135,17 +135,16 @@ const ButtonStyle = styled.div`
   display: flex !important
   width: 10.4em
   height: 3em
-  transform: translate(3.59em, 12em)
+  transform: translate(10em, 16em)
 `
 const SidebarText = styled.div`
   display: flex !important
   text-align: center !important
-  align-items: flex-end !important
-  border: 1px dashed black
+  align-items: center !important
   width: 32em
-  height: 10em
-  margin-top: 18em
-  transform: translate(-80%)
+  height: 20em
+  margin-top: 16em
+  transform: translate(-10em, 3em)
 `
 const LoginButton = styled.div`
   display: flex !important
