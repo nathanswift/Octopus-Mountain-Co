@@ -1,6 +1,6 @@
 import React, { Fragment, } from 'react';
 import { AuthConsumer, } from "../providers/AuthProvider";
-import { Form, Grid, Image, Container, Divider, Header, Button, } from 'semantic-ui-react';
+import { Form, Grid, Image, Container, Divider, Header, Button } from 'semantic-ui-react';
 import Dropzone from 'react-dropzone'
 
 const defaultImage = 'https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png';
@@ -47,14 +47,16 @@ class Profile extends React.Component {
     const { auth: { user }, } = this.props;
     return (
       <Fragment>
-        <Grid.Column width={4}>
-          <Image src={user.image || defaultImage} />
-        </Grid.Column>
-        <Grid.Column width={8}>
-          <Header as="h1">{user.name}</Header>
-          <Header as="h1">{user.email}</Header>
-        </Grid.Column>
-      </Fragment>
+      <Grid.Column width={4}>
+        <Image src={user.image || defaultImage} />
+      </Grid.Column>
+      <Grid.Column width={8}>
+        <Header as="h1">
+          <Header.Content>{user.name}</Header.Content>
+          <Header.Subheader>{user.nickname}</Header.Subheader>
+        </Header>
+      </Grid.Column>
+    </Fragment>
     )
   }
 
