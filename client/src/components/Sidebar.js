@@ -4,15 +4,17 @@ import { FaDiceD20 } from 'react-icons/fa'
 import styled from 'styled-components'
 import ScrollLock from 'react-scrolllock'
 import { AuthConsumer } from '../providers/AuthProvider';
+import MenuImage from '../assets/images/OmLogo.svg'
+import { Image } from 'semantic-ui-react'
 
 class Sidebars extends React.Component {
    state = { visible: false,
-             sidebarText: `Bringing a sense of peace to all your business needs! Choose OM`,
+             sidebarText: `Bringing a sense of peace to all your business needs! Choose OM Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum.`,
              lockScroll: false
   }
 
   handleAbout = () => {
-    this.setState({ sidebarText: `This is our About info`})
+    this.setState({ sidebarText: `Development and Design Firm located in Salt Lake City Utah. When we're not crushing deadlines we're usually playing in the snow! We created this company to bring back peace of mind to business `})
   }
 
   handleServices = () => {
@@ -29,7 +31,6 @@ class Sidebars extends React.Component {
   }
 
   onClick = () => {
-    debugger
     this.toggleMenu()
     this.props.auth.handleLogout(this.props.history)
   }
@@ -67,10 +68,10 @@ class Sidebars extends React.Component {
               <SidebarTitle onClick={this.toggleMenu} as={Link} to={'/'} style={{textDecoration: 'none'}}>Octopus Mountain Co</SidebarTitle>
               <ButtonStyle className="btn"
                 onClick={() => this.handleAbout()}
-              >About   |</ButtonStyle>
+              >About</ButtonStyle>
               <ButtonStyle className="btn"
                 onClick={() => this.handleServices()}  
-              >Services   |</ButtonStyle>
+              >Services</ButtonStyle>
               <ButtonStyle className="btn"
                 onClick={() => this.handleContact()}
               >Contact</ButtonStyle>
@@ -83,7 +84,7 @@ class Sidebars extends React.Component {
             null
         }
           <MenuButton onClick={this.toggleMenu}  style={{ display: 'flex !important'}}>
-                <FaDiceD20 style={{ height: '2em', width: '2em', marginLeft: '1em'}}/>
+                <Image src={MenuImage} style={{ height: '5em', width: '5em', marginLeft: '3em'}}/>
           </MenuButton>
         </Sidebar>
         <ScrollLock isActive={this.state.lockScroll} />
@@ -132,16 +133,17 @@ const SidebarTitle = styled.h2`
 
 const ButtonStyle = styled.div`
   display: flex !important
-  border: 1px solid black
   width: 10.4em
   height: 3em
   transform: translate(3.59em, 12em)
 `
 const SidebarText = styled.div`
   display: flex !important
-  border: 1px solid black
+  text-align: center !important
+  align-items: flex-end !important
+  border: 1px dashed black
   width: 32em
-  height: 27em
+  height: 10em
   margin-top: 18em
   transform: translate(-80%)
 `
@@ -149,9 +151,8 @@ const LoginButton = styled.div`
   display: flex !important
   align-items: center
   justify-content: center
-  border: .1em solid black
-  width: 6em
-  height: 4em
+  width: 8em
+  height: 6em
 `
 
 
