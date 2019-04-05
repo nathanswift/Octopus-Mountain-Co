@@ -38,7 +38,7 @@ export default class Home extends React.Component {
           switch (this.state.count) {
             case 1: return (
               <div>
-                <div style={{ display: 'hidden !important', position: 'fixed !important' }}>
+                <div style={{ display: 'hidden !important', position: 'fixed !important', marginTop: '12em' }}>
                   <HeaderText2 as="h1" textAlign="center">Something about having peace in business choices om lalala</HeaderText2>
                 </div>
               </div>
@@ -49,10 +49,10 @@ export default class Home extends React.Component {
               )
             default: return(
               <div>
-                <div style={{ display: 'flex !important' }}>
+                <div style={{ display: 'flex !important', marginTop: '7.5em' }}>
                   <HeaderText as="h1" textAlign="center">Octopus Mountain Co</HeaderText>
                 </div>
-                <div style={{ display: 'flex !important' }}>
+                <div style={{ display: 'flex !important', marginTop: '26em' }}>
                   <ScrollIcon>Scroll Down
                     <FaAngleDown />
                   </ScrollIcon>
@@ -72,6 +72,8 @@ const HeaderText = styled.div`
   align-items: center !important
   justify-content: center !important
   width: 100% !important
+  font-size: 2.4em !important
+  letter-spacing: 0.5em 
   height: 13em !important
   margin: auto !important
   transform: translate(-2%, 30%)
@@ -79,6 +81,7 @@ const HeaderText = styled.div`
 const HeaderText2 = styled.div`
   display: flex !important
   align-items: center !important
+  letter-spacing: .2em
   justify-content: center !important
   width: 100% !important
   height: 13.000em !important
@@ -97,5 +100,5 @@ const ScrollIcon = styled.h3`
 
 const PageBody = styled.div`
   width: 100%
-  height: 70em
+  height: 80em
 `

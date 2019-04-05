@@ -57,6 +57,8 @@ const SegmentStyles = styled(Segment)`
   width: 80%
   background: transparent !important 
   transform: translate(8em)
+
+  @keyframes 
 `
 
 

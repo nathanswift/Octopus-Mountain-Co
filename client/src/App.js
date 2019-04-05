@@ -44,7 +44,7 @@ export default class App extends React.Component {
               <Route exact path="/Products" component={Products} />
               <Route component={NoMatch} />
             </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </FetchUser>
       </div>
     )
