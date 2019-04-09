@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import HomeShow from '../components/HomeShow'
 import { Image } from 'semantic-ui-react'
-import { pulse } from '../assets/keyframes/Keyframes'
+import { pulse, slideUp, fadeIn } from '../assets/keyframes/Keyframes'
 
 export default class Home extends React.Component {
   state = {
@@ -50,7 +50,7 @@ export default class Home extends React.Component {
               )
               default: return (
                 <div>
-                  <div style={{ display: 'flex !important', marginTop: '2em' }}>
+                  <div style={{ display: 'flex !important', marginTop: '8em' }}>
                     <HeaderText as="h1" textAlign="center">Octopus Mountain Co</HeaderText>
                   </div>
                   <div style={{ display: 'flex !important', marginTop: '26em' }}>
@@ -67,6 +67,8 @@ export default class Home extends React.Component {
     )
   }
 }
+
+// Make dismount animation for the first two header text components
 
 const SVG = () => (
   <svg
@@ -89,7 +91,8 @@ const HeaderText = styled.div`
   letter-spacing: 0.5em 
   height: 13em !important
   margin: auto !important
-  transform: translate(-2%, 30%)
+  animation-name: ${slideUp}
+  animation-duration: 2s
 `
 const HeaderText2 = styled.div`
   display: flex !important
