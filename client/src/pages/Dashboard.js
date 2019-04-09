@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { Header, Image, Segment } from 'semantic-ui-react'
-import { FaDribbble } from 'react-icons/fa';
+import { Header, Image, Segment, Icon, Divider } from 'semantic-ui-react'
 import { AuthConsumer } from '../providers/AuthProvider'
 
 class Dashboard extends React.Component {
@@ -10,30 +8,39 @@ class Dashboard extends React.Component {
     return (
       <Segment>
         <div>
+          <Image circular centered size='medium' src={require('../assets/images/AltaMap.png')} />
           <Header as='h1' centered textAlign='center'>
-            <Image circular src={this.props.auth.user.image_url} /> {this.props.auth.user.name}
+            Welcome {this.props.auth.user.name}!
           </Header>
         </div>
-        <Link to="/Profile">
-          <DashBut>
-            Profile
-          </DashBut>
-        </Link>
-        <Link to="/Dashboard/Messages">
-          <DashBut>
-            Messages
-          </DashBut>
-        </Link>
-        <Link to="/Dashboard/Analytics">
-          <DashBut>
-            Analytics
-          </DashBut>
-        </Link>
-        <Link to="/Dashboard/Payments">
-          <DashBut>
-            Payment
-          </DashBut>
-        </Link>
+        <Divider hidden />
+          <Link to="/Profile">
+            <Header textAlign='center' icon>
+              <Icon name='address card' />
+              Profile
+          </Header>
+          </Link>
+          <Divider hidden />
+          <Link to="/Dashboard/Messages">
+            <Header textAlign='center' icon>
+              <Icon name='chat bar' />
+              Messages
+          </Header>
+          </Link>
+          <Divider hidden />
+          <Link to="/Dashboard/Analytics">
+            <Header textAlign='center' icon>
+              <Icon name='chart line' />
+              Analytics
+          </Header>
+          </Link>
+          <Divider hidden />
+          <Link to="/Dashboard/Payments">
+            <Header textAlign='center' icon>
+              <Icon name='dollar sign' />
+              Payment
+          </Header>
+          </Link>
       </Segment>
     )
   }
@@ -53,13 +60,5 @@ const ConnectedDashboard = (props) => (
 // allow us to route our payment to the om bank account
 // allows us to leave a message for client and see their response
 
-const DashBut = styled.div`
-  height: 1em
-  width: 1em
-  margin-left: 8em
-  margin-top: 6em
-  display: flex !important
-  justify-content: center
-`
 
 export default ConnectedDashboard
