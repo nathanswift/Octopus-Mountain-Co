@@ -1,12 +1,13 @@
 import React from 'react'
 import { AuthConsumer } from "../providers/AuthProvider"
 import { Link } from 'react-router-dom'
-import { Form, Segment, Header } from 'semantic-ui-react'
+import { Form, Segment, Header, Image } from 'semantic-ui-react'
 import styled from 'styled-components'
 import Background from '../assets/images/AltaMap.png'
+import ScrollLock from 'react-scrolllock'
 
 class Login extends React.Component {
-  state = { email: '', password: '' }
+  state = { email: '', password: '', lockScroll: true }
 
   handleSubmit = (e) => {
     e.preventDefault()
@@ -23,32 +24,36 @@ class Login extends React.Component {
     const { email, password } = this.state
 
     return (
-      <FormContainer>
-        <Header textAlign='center' style={{color: 'white', letterSpacing: '2em', marginRight: '-1.5em', fontSize: '5em'}} as='h1'>Om</Header>
-        <Segment centered inverted style={{display: 'flex', justifyContent: 'center', marginTop: '-10em', marginRight: '10em'}} textAlign='center'>
-          <Form inverted onSubmit={this.handleSubmit}>
-            <Form.Input
-              label='Email'
-              autoFocus
-              required
-              name='email'
-              value={email}
-              placeholder='Email'
-              onChange={this.handleChange}
-              />
-            <Form.Input
-              label='Password'
-              required
-              name='password'
-              value={password}
-              placeholder='Password'
-              type='password'
-              onChange={this.handleChange}
-              />
-            <Form.Button type='submit' color='white' inverted>Log In</Form.Button>
-          </Form>
-        </Segment>
-      </FormContainer>
+      <div>
+          <Image src={Background} style={{ width: '82%', height: '47em', transform: 'translate(10em, 6em)', position: 'absolute'}}/>
+        <FormContainer>
+          <Header textAlign='center' style={{color: 'white', letterSpacing: '1em', fontSize: '5em', transform: 'translate(-5.7em)'}} as='h1'>Om</Header>
+          <Header inverted as='h3' style={{ fontSize: '1.5em', transform: 'translate(-18em)'}}>Dashboard</Header>
+          <SegmentStyle centered inverted>
+            <Form inverted onSubmit={this.handleSubmit} textAlign='center'>
+              <FormInputStyle
+                autoFocus
+                required
+                name='email'
+                value={email}
+                placeholder='Email'
+                onChange={this.handleChange}
+                />
+              <FormInputStyle
+                required
+                name='password'
+                value={password}
+                placeholder='Password'
+                type='password'
+                onChange={this.handleChange}
+                />
+              <Form.Button type='submit' color='white' inverted>Log In</Form.Button>
+            </Form>
+          </SegmentStyle>
+          <ScrollLock isActive={this.state.lockScroll} />
+        </FormContainer>
+      </div>
+
     )
   }
 }
@@ -69,7 +74,7 @@ const FormContainer = styled.div`
   height: 70em
   justify-content: center !important
   align-items: center !important
-  background-image: url(${Background})
+  transform: translate(14em, -20em)
 `
 
 const SubmitButton = styled.div`
@@ -77,4 +82,14 @@ const SubmitButton = styled.div`
   height: 3em
   margin-top: 1em
   background: red
+`
+const SegmentStyle = styled(Segment)`
+  display: flex !important
+  width: 30em !important
+  justifyContent: 'center'
+`
+const FormInputStyle = styled(Form.Input)`
+  display: flex !important
+  width: 25em !important 
+  transform: translate(2em) !important
 `
