@@ -12,4 +12,11 @@ export const pulse = keyframes`
     }
 `
 
+export const slideUp = keyframes`
+    0% { 
+        transform: translateY(25em)
+    }
+`
+
+
 export default pulse
