@@ -39,7 +39,7 @@ export default class Home extends React.Component {
             case 1: return (
               <div>
                 <div style={{ display: 'hidden !important', position: 'fixed !important', marginTop: '12em' }}>
-                  <HeaderText2 as="h1" textAlign="center">Something about having peace in business choices om lalala</HeaderText2>
+                  <HeaderText2 as="h1" textAlign="center">Trust us with your business solutions. Breathe again with Om.</HeaderText2>
                 </div>
               </div>
             )
