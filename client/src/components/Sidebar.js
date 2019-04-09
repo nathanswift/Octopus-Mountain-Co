@@ -5,25 +5,46 @@ import styled from 'styled-components'
 import ScrollLock from 'react-scrolllock'
 import { AuthConsumer } from '../providers/AuthProvider';
 import MenuImage from '../assets/images/OmLogo.svg'
-import { Image } from 'semantic-ui-react'
+import { Button, Form, Message, Image } from 'semantic-ui-react'
 
 class Sidebars extends React.Component {
    state = { visible: false,
-             sidebarText: `Bringing a sense of peace to all your business needs! Choose OM Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum.`,
+             sidebarText: `Octopus Mountain Co is a small startup firm based out of Salt Lake City Utah. We crush deadlines and shred powder.
+              Never been afraid to go where no man has gone before. Doing the impossible. Okay, so we might be milking this a bit, but if
+               you're looking for quality design, functional mobile and web applications, and helping secure your place on the google hierarchy
+                and raise your presence on the web then we're your guys! Based out of Salt Lake City and as long the snow keeps coming 
+                down, we'll keep coming up with creative solutions to your business needs. So Relax. We got this. Breath with Om.`,
              lockScroll: false
   }
 
   handleAbout = () => {
-    this.setState({ sidebarText: `Development and Design Firm located in Salt Lake City Utah. When we're not crushing deadlines we're usually playing in the snow! We created this company to bring back peace of mind to business and to create an equal space of give and take. Our business is ran from philathanthropy, ethics, and openness. With every website built from Om we will give back to a local or global charity of your choice.`})
+    this.setState({ sidebarText: `Octopus Mountain Co is a small startup firm based out of Salt Lake City Utah. We crush deadlines and shred powder.
+     Never been afraid to go where no man has gone before. Doing the impossible. Okay, so we might be milking this a bit, but if you're
+      looking for quality design, functional mobile and web applications, and helping secure your place on the google hierarchy and raise
+       your presence on the web then we're your guys! Based out of Salt Lake City and as long the snow keeps coming down, we'll keep
+       coming up with creative solutions to your business needs. So Relax. We got this. Breath with Om.`})
   }
 
   handleServices = () => {
-    this.setState({ sidebarText: 'These are our services'})
+    this.setState({ sidebarText: `We offer full website services from Design to Implementation. Using full frameworks and database 
+    architecture we can build you're website from the ground up! Need to interact better with clients or your team? Need a great logo, graphic design, 
+    or to build your presence on social media? Want to build an app, revamp your website, or build one from scratch?
+    Have a great Idea that you want to take to a global platform? 
+     We can help. No project is too big!`})
   }
 
-  handleContact = () => {
-    this.setState({ sidebarText: `This is our contact info.`})
-  }
+  handleContact = () => (
+    this.setState({ sidebarText:
+        <Form success>
+          <h3> Octopus Mountain Co </h3>
+          <h3> Salt Lake City, Ut </h3>
+          <h3> nswiftnswift@gmail.com </h3>
+          <Form.Input label='Email' placeholder='joe@schmoe.com' />
+          <Message success header='Form Completed' content="You're all signed up for the newsletter" />
+          <Button>Submit</Button>
+        </Form>
+    })
+  )
 
   toggleMenu = () => {
     this.setState({ visible: !this.state.visible, lockScroll: !this.state.lockScroll })
@@ -72,7 +93,7 @@ class Sidebars extends React.Component {
               <ButtonStyle className="btn"
                 onClick={() => this.handleServices()}  
               >Services</ButtonStyle>
-              <ButtonStyle className="btn"
+              <ButtonStyle
                 onClick={() => this.handleContact()}
               >Contact</ButtonStyle>
               <SidebarText style={{display: 'flex !important'}}>
@@ -136,6 +157,7 @@ const ButtonStyle = styled.div`
   height: 3em
   transform: translate(10em, 20em)
 `
+
 const SidebarText = styled.div`
   display: flex !important
   text-align: center !important

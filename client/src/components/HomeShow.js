@@ -10,7 +10,6 @@ class HomeShow extends React.Component {
 
   state = {
     resizeNotifier: () => { },
-    lockScroll: true
   }
 
   render() {
@@ -41,7 +40,6 @@ class HomeShow extends React.Component {
                 </Button>
               </Link>
               <SegmentExamplePlaceholderGrid />
-              <ScrollLock isActive={this.state.lockScroll} />
             </Grid.Column>
           </Grid.Row>
         </GridStyles>
