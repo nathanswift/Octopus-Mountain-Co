@@ -6,6 +6,7 @@ import ScrollLock from 'react-scrolllock'
 import { AuthConsumer } from '../providers/AuthProvider';
 import MenuImage from '../assets/images/OmLogo.svg'
 import { Button, Form, Message, Image } from 'semantic-ui-react'
+import ContactForm from './ContactForm'
 
 class Sidebars extends React.Component {
    state = { visible: false,
@@ -33,16 +34,13 @@ class Sidebars extends React.Component {
      We can help. No project is too big!`})
   }
 
+  onSubmit = () => {
+    debugger
+  }
+
   handleContact = () => (
     this.setState({ sidebarText:
-        <Form success>
-          <h3> Octopus Mountain Co </h3>
-          <h3> Salt Lake City, Ut </h3>
-          <h3> nswiftnswift@gmail.com </h3>
-          <Form.Input label='Email' placeholder='joe@schmoe.com' />
-          <Message success header='Form Completed' content="You're all signed up for the newsletter" />
-          <Button>Submit</Button>
-        </Form>
+        <ContactForm />
     })
   )
 
@@ -134,7 +132,7 @@ const Sidebar = styled.div`
 `
 const SideBarStyles = styled.div`
   display: flex
-  z-index: 2
+  z-index: 2 !important
   margin-top: -0.49em
   margin-left: -0.5em
   width: 100% !important
@@ -155,7 +153,7 @@ const ButtonStyle = styled.div`
   display: flex !important
   width: 10.4em
   height: 3em
-  transform: translate(10em, 20em)
+  transform: translate(10.75em, 16em)
 `
 
 const SidebarText = styled.div`
