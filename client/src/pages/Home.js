@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import HomeShow from '../components/HomeShow'
 import { Image } from 'semantic-ui-react'
+import Paws from '../assets/images/Paws.png'
 import { pulse, slideUp, fadeIn } from '../assets/keyframes/Keyframes'
 
 export default class Home extends React.Component {
@@ -53,6 +54,7 @@ export default class Home extends React.Component {
                   <div style={{ display: 'flex !important', marginTop: '8em' }}>
                     <HeaderText as="h1" textAlign="center">Octopus Mountain Co</HeaderText>
                   </div>
+                    <Image as={OctoImage} src={Paws} />
                   <div style={{ display: 'flex !important', marginTop: '26em' }}>
                     <ScrollIcon>
                       <Image src='https://static.thenounproject.com/png/486805-200.png' />
@@ -70,27 +72,27 @@ export default class Home extends React.Component {
 
 // Make dismount animation for the first two header text components
 
-const SVG = () => (
-  <svg
-    width="100%"
-    height="100%"
-    viewBox="0 0 32 32"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-  >
-  <path d="M375,650C373.989,531.955 374,532 374,532" fill='#fff' />
-  </svg>
-)
+
+const OctoImage = styled(Image)`
+  width: 50em
+  height: auto
+  opacity: .85
+  margin-top: -110em
+  margin-left: 27em
+  z-index: 1
+`
 
 const HeaderText = styled.div`
-  display: flex !important
-  align-items: center !important
-  justify-content: center !important
-  width: 100% !important
-  font-size: 2.4em !important
-  letter-spacing: 0.5em 
-  height: 13em !important
-  margin: auto !important
+  display: flex 
+  justify-content: center
+  width: 100% 
+  margin-top: 4em !important
+  font-size: 5em 
+  letter-spacing: 1.5em 
+  text-decoration: bold
+  margin-left: 1em
+  height: 13em 
+  font-weight: 20em
   animation-name: ${slideUp}
   animation-duration: 2s
 `
