@@ -18,6 +18,7 @@ import DashboardMessages from './components/DashboardMessages'
 import DashboardAnalytics from './components/DashboardAnalytics'
 import DashboardPayments from './components/DashboardPayments'
 import ProtectedRoute from './components/ProtectedRoute'
+import LoadingWave from './pages/LoadingWave'
 
 
 export default class App extends React.Component {
@@ -42,6 +43,7 @@ export default class App extends React.Component {
               <Route exact path="/Login" component={Login} />
               <Route exact path="/Register" component={Register} />
               <Route exact path="/Products" component={Products} />
+              <Route exact path="/LoadingWave" component={LoadingWave} />
               <Route component={NoMatch} />
             </Switch>
           {/* <Footer /> */}
