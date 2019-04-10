@@ -58,7 +58,7 @@ const HeaderTxt = styled(Segment)`
 `
 
 const OctoImage = styled(Image)`
-  width: 50em !important
+  width: 45em !important
   height: auto
   opacity: .85
   justify-content: center !important
