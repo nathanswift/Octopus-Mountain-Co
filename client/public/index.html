@@ -13,6 +13,140 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+    <style type="text/css">
+      html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      }
+      body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 13px;
+      -webkit-font-smoothing: antialiased;
+      }
+      .ipl-progress-indicator.available {
+      opacity: 0;
+      }
+      .ipl-progress-indicator {
+      background-color: #f5f5f5;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      opacity: 1;
+      pointer-events: none;
+      -webkit-transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;
+      -moz-transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;
+      transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;
+      z-index: 9999;
+      }
+      .insp-logo-frame {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+      -webkit-animation: fadein 436ms;
+      -moz-animation: fadein 436ms;
+      animation: fadein 436ms;
+      height: 98%;
+      }
+      .insp-logo-frame-img{
+      width: 100px;
+      height: 100px;
+      -webkit-align-self: center;
+      -moz-align-self: center;
+      align-self: center;
+      transform: translate(-1em)
+      }
+      @-webkit-keyframes fadein {
+      from {
+      opacity: 0;
+      }
+      to {
+      opacity: 1;
+      }
+      ;
+      }
+      @-moz-keyframes fadein {
+      from {
+      opacity: 0;
+      }
+      to {
+      opacity: 1;
+      }
+      ;
+      }
+      @keyframes fadein {
+      from {
+      opacity: 0;
+      }
+      to {
+      opacity: 1;
+      }
+      ;
+      }
+
+      .wavy-loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+      .wavy-loader span {
+  height: 0.5em;
+  width: 0.5em;
+  display: block;
+  position: absolute;
+  left: -6em;
+  top: 50px;
+  border-radius: 50%;
+  background: black;
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+  .wavy-loader span:nth-child(1) {
+    left: -5em;  
+    animation-delay: 0s;
+  }
+  .wavy-loader span:nth-child(2) {
+    left: -3em; 
+    animation-delay: 0.25s;
+  }
+  .wavy-loader span:nth-child(3) {
+    left: -1em;   
+    animation-delay: 0.5s;
+  }
+  .wavy-loader span:nth-child(4) {
+    left: 1em; 
+    animation-delay: 0.75s;
+  }
+  .wavy-loader span:nth-child(5) {
+    left: 3em; 
+    animation-delay: 1s;
+  }
+
+@keyframes wave {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+    </style>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -26,6 +160,46 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="ipl-progress-indicator" id="ipl-progress-indicator">
+      <div class="insp-logo-frame">
+          <svg class="insp-logo-frame-img" width="100px" height="100px" viewBox="0 0 3406 3402" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+            <g id="Artboard1" transform="matrix(0.68614,0,0,0.759206,-2403.55,-1370.37)">
+                <rect x="3503" y="1805" width="4964" height="4481" style="fill:none;"/>
+                <g transform="matrix(1.45743,0,0,1.31717,-2859.4,-675.883)">
+                    <text x="5461px" y="4112.2px" style="font-family:'Phosphate-Inline', 'Phosphate';font-size:1600px;">O</text>
+                </g>
+                <g transform="matrix(1.45743,0,0,1.31717,-2758.11,-1124.38)">
+                    <path d="M4758,5150L4753,3630L6000,5085L7244,3630L7256,5093" style="fill:none;stroke:black;stroke-width:166.67px;"/>
+                </g>
+                <g transform="matrix(1.4484,0.146372,-0.149295,1.20665,-2109.35,-1697.77)">
+                    <path d="M6619.5,3630L6863,3385.5" style="fill:none;stroke:black;stroke-width:173.3px;"/>
+                </g>
+                <g transform="matrix(1.45732,-0.0157481,0.0174251,1.31707,-2632.07,-1122.45)">
+                    <path d="M6347,3385.5L6741.25,2802" style="fill:none;stroke:black;stroke-width:166.67px;"/>
+                </g>
+                <g transform="matrix(1.45743,0,0,1.31717,-2578.85,-1174.43)">
+                    <path d="M6005.5,3230L6139,2802" style="fill:none;stroke:black;stroke-width:166.67px;"/>
+                </g>
+                <g transform="matrix(1.45743,0,0,1.31717,-2708.56,-1111.7)">
+                    <path d="M5749,3230L5602,2523" style="fill:none;stroke:black;stroke-width:166.67px;"/>
+                </g>
+                <g transform="matrix(1.45743,0,0,1.31717,-2573.02,-1178.38)">
+                    <path d="M5391.5,3385.5L5043,3093.75" style="fill:none;stroke:black;stroke-width:166.67px;"/>
+                </g>
+                <g transform="matrix(1.44927,-0.139133,0.153949,1.3098,-3124.4,-374.735)">
+                    <path d="M5217.25,3624L4898,3488" style="fill:none;stroke:black;stroke-width:166.67px;"/>
+                </g>
+            </g>
+        </svg>
+      </div>
+      <div class="wavy-loader">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+    </div>
     <div id="root"></div>
     <!--
       This HTML file is a template.
