@@ -12,8 +12,24 @@ export default class Home extends React.Component {
     count2: 0
   }
 
+  // fake authentication Promise
+  authenticate(){
+    return new Promise(resolve => setTimeout(resolve, 2000))
+  }
+
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
+    this.authenticate().then(() => {
+      const ele = document.getElementById('ipl-progress-indicator')
+      if(ele){
+        // fade out
+        ele.classList.add('available')
+        setTimeout(() => {
+          // remove from DOM
+          ele.outerHTML = ''
+        }, 2000)
+      }
+    })
   }
 
   handleScroll = () => {
