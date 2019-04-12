@@ -1,5 +1,5 @@
 import React from 'react';
-import { Segment, Icon, Button, Image, Grid } from 'semantic-ui-react'
+import { Segment, Icon, Button, Image, Grid, Header } from 'semantic-ui-react'
 import SegmentExamplePlaceholderGrid from './HeaderText'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
@@ -15,7 +15,7 @@ class HomeShow extends React.Component {
 
   render() {
     return (
-      <Segment as={HeaderTxt} placeholder>
+      <Segment as={SegmentStyles} placeholder>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '8m', alignItems: 'center' }}>
           <Image as={OctoImage} src={Paws} />
         </div>
@@ -44,32 +44,40 @@ class HomeShow extends React.Component {
             </Grid.Column>
           </Grid.Row>
         </GridStyles>
+        <HeaderText as="h1" textAlign="center">O M Co.</HeaderText>
         <ScrollLock isActive={this.state.lockScroll} />
       </Segment>
     );
   }
 }
 
-const HeaderTxt = styled(Segment)`
+const SegmentStyles = styled(Segment)`
   position: absolute !important
   width: 100%
+  font-family: 'Major Mono Display', monospace;
   height: 100%
   background: transparent !important
   display: flex
   border: none !important
 `
+const HeaderText = styled(Header)`
+  display: flex !important
+  justify-content: center !important
+  align-items: flex-end !important
+  font-family: 'Major Mono Display', monospace;
+`
 
 const OctoImage = styled(Image)`
-  width: 45em !important
+  display: flex !important
+  width: 30em !important
+  align-items: center 
   height: auto
   opacity: .85
   justify-content: center !important
-  align-items: center !important
-  transform: translate(-2em)
 `
 const GridStyles = styled(Grid)`
   width: auto
-  height: 80em
+  height: auto
   display: flex !important
   flex-wrap: wrap !important
   justify-content: center !important
