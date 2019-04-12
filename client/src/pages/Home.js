@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import HomeShow from '../components/HomeShow'
 import { Image } from 'semantic-ui-react'
-import Paws from '../assets/images/Paws.png'
 import { pulse, slideUp, fadeIn } from '../assets/keyframes/Keyframes'
 
 export default class Home extends React.Component {
@@ -70,7 +69,6 @@ export default class Home extends React.Component {
                   <div style={{ display: 'flex !important', marginTop: '8em' }}>
                     <HeaderText as="h1" textAlign="center">Octopus Mountain Co</HeaderText>
                   </div>
-                    <Image as={OctoImage} src={Paws} />
                   <div style={{ display: 'flex !important', marginTop: '26em' }}>
                     <ScrollIcon>
                       <Image src='https://static.thenounproject.com/png/486805-200.png' />
@@ -89,14 +87,6 @@ export default class Home extends React.Component {
 // Make dismount animation for the first two header text components
 
 
-const OctoImage = styled(Image)`
-  width: 50em
-  height: auto
-  opacity: .85
-  margin-top: -110em
-  margin-left: 27em
-  z-index: 1
-`
 
 const HeaderText = styled.div`
   display: flex 
