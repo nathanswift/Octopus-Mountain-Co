@@ -10,7 +10,8 @@ export default class Home extends React.Component {
     height: window.pageYOffset,
     scrolled: false,
     count: 0,
-    count2: 0
+    count2: 0,
+    scrollIcon: false,
   }
 
   // fake authentication Promise
@@ -34,51 +35,52 @@ export default class Home extends React.Component {
   }
 
   handleScroll = () => {
-    const { count, count2 } = this.state
+    const { count, count2, scrollIcon } = this.state
     this.setState({ height: window.pageYOffset })
-    if (this.state.height > 200 && count === 0) {
-      window.scrollTo(0, 0)
-      this.setState({ scrolled: true, count: 1, count2: 1 })
-    } else if (this.state.height > 200 && count === 1) {
-      window.scrollTo(0, 0)
-    } else if (this.state.height > 190 && count2 === 1) {
-      window.scrollTo(0, 0)
-      this.setState({ count: 2 })
-      window.removeEventListener('scroll', this.handleScroll)
-    }
+    setTimeout(() => {
+      if (this.state.height > 0 && count2 === 0){
+        this.setState({ scrollIcon: !scrollIcon, count2: 1 })
+      }
+      if (this.state.height > 1100 && count === 0) {
+        window.scrollTo(0, 0)
+        this.setState({ scrolled: true, count: 1, count2: 1})
+        console.log('starting scroll')
+      } 
+      if (this.state.height > 300 && count === 1) {
+        window.scrollTo(0, 0)
+      } 
+    }, 2000)
   }
 
   render() {
     return (
       <PageBody>
         <div style={{ display: 'flex !important' }}>
-          {(() => {
-            switch (this.state.count) {
-              case 1: return (
-                <div>
-                  <div style={{ display: 'hidden !important', position: 'fixed !important', marginTop: '12em' }}>
-                    <HeaderText2 as="h1" textAlign="center">Trust us with your business solutions. Breathe again with Om.</HeaderText2>
-                  </div>
-                </div>
-              )
-              case 2: return (
+          {
+            this.state.count === 1 ?
                 <HomeShow />
-                // figure something out here because the two lock scrolls don't work unless the scroll takes you to the /works path
-              )
-              default: return (
+              :
                 <div>
                   <div style={{ display: 'flex !important', marginTop: '8em' }}>
                     <HeaderText as="h1" textAlign="center">Octopus Mountain Co</HeaderText>
                   </div>
-                  <div style={{ display: 'flex !important', marginTop: '26em' }}>
-                    <ScrollIcon>
-                      <Image src='https://static.thenounproject.com/png/486805-200.png' />
-                    </ScrollIcon>
+                  <div>
+                    {
+                      this.state.scrollIcon ? 
+                        null
+                      :
+                      <ScrollIcon>
+                        <ImageStyle src='https://static.thenounproject.com/png/486805-200.png'/>
+                      </ScrollIcon>
+                    }
+                  </div>
+                  <div>
+                  <div style={{ position: 'relative !important', marginTop: '-40em !important'}}>
+                    <HeaderText2 as="h1" textAlign="center">Trust us with your business solutions. Breathe again with Om.</HeaderText2>
                   </div>
                 </div>
-              )
+                </div>
             }
-          })()}
         </div>
       </PageBody>
     )
@@ -132,4 +134,7 @@ const ScrollIcon = styled(Image)`
 const PageBody = styled.div`
   width: 100%
   height: 80em
+`
+const ImageStyle = styled(Image)`
+  transform: translate(0, -50em) !important
 `
