@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import HomeShow from '../components/HomeShow'
 import { Image } from 'semantic-ui-react'
 import { pulse, slideUp, fadeIn } from '../assets/keyframes/Keyframes'
+import { media } from '../themes/media'
 
 export default class Home extends React.Component {
   state = {
@@ -101,6 +102,9 @@ const HeaderText = styled.div`
   font-weight: 20em
   animation-name: ${slideUp}
   animation-duration: 2s
+  ${media.phone`
+    font-size: 1em
+  `}
 `
 const HeaderText2 = styled.div`
   display: flex !important
