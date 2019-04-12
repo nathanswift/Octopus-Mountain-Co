@@ -17,7 +17,7 @@ const SegmentExamplePlaceholderGrid = () => (
 )
 
 const videoOptions = {
-    src: 'https://fpdl.vimeocdn.com/vimeo-prod-skyfire-std-us/01/1082/6/155411596/481480321.mp4?token=1554866964-0x0f627ebaf4e11d696ce4660c83a918fd8481f5eb',
+    src: 'https://fpdl.vimeocdn.com/vimeo-prod-skyfire-std-us/01/177/6/150885292/462343670.mp4?token=1555043664-0xef2fbd5ac0331c65cdf13fba18a2206fd848b230',
     autoPlay: true,
     loop: true,
     muted: true

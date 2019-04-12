@@ -160,9 +160,9 @@ const SideBarStyles = styled.div`
   height: 80em
 `;
 const MenuButton = styled.div`
-  margin-top: 2em
   position: fixed !important
   z-index: 2
+  transform: translate(0, 2em)
 `;
 
 const SidebarTitle = styled.h2`

@@ -90,7 +90,7 @@ export default class Home extends React.Component {
 
 
 const OctoImage = styled(Image)`
-  width: 50em
+  width: 45em
   height: auto
   opacity: .85
   margin-top: -110em
