@@ -15,7 +15,7 @@ class HomeShow extends React.Component {
 
   render() {
     return (
-      <Segment as={SegmentStyle} placeholder>
+      <Segment as={SegmentStyles} placeholder>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '8m', alignItems: 'center' }}>
           <Image as={OctoImage} src={Paws} />
         </div>
