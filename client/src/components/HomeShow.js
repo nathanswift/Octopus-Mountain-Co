@@ -10,6 +10,7 @@ class HomeShow extends React.Component {
 
   state = {
     resizeNotifier: () => { },
+    lockScroll: true
   }
 
   render() {
@@ -43,6 +44,7 @@ class HomeShow extends React.Component {
             </Grid.Column>
           </Grid.Row>
         </GridStyles>
+        <ScrollLock isActive={this.state.lockScroll} />
       </Segment>
     );
   }
@@ -67,7 +69,7 @@ const OctoImage = styled(Image)`
 `
 const GridStyles = styled(Grid)`
   width: auto
-  height: auto
+  height: 80em
   display: flex !important
   flex-wrap: wrap !important
   justify-content: center !important
