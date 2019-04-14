@@ -40,9 +40,9 @@ class Sidebars extends React.Component {
               </Grid>
             </Grid.Column>
             <Grid.Column>
-              <Header as="h5">Story 0.1</Header>
-              <Header as="h1">The OM Origin</Header>
-              <Header textAlign="center" as="h4">
+              <Header inverted as="h5">Story 0.1</Header>
+              <Header inverted as="h1">The OM Origin</Header>
+              <Header inverted textAlign="center" as="h4">
                 A long time ago in a far away land, a group of talented developers had the thought: why work for a development firm when we could build one ourselves?
                 It was no easy task but the developers pressed on hoping that one day they too could bring peace to peoples business solutions.
                 After many long nights the developers had done it! 
@@ -242,7 +242,9 @@ const ContainerStyles = styled(Container)`
 
 const Sidebar = styled.div`
   display: flex !important
-  background-color: white !important
+  background-color: black
+  color: white !important
+  opacity: .89
   position: absolute !important
   width: 100%
   z-index: 2
