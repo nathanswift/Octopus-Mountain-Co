@@ -1,7 +1,7 @@
 import React from 'react'
 import { AuthConsumer } from "../providers/AuthProvider"
 import { Link } from 'react-router-dom'
-import { Form, Segment, Header, Image } from 'semantic-ui-react'
+import { Form, Segment, Header, Image, Card } from 'semantic-ui-react'
 import styled from 'styled-components'
 import Background from '../assets/images/AltaMap.png'
 import ScrollLock from 'react-scrolllock'
@@ -25,32 +25,31 @@ class Login extends React.Component {
 
     return (
       <div>
-          <Image src={Background} style={{ width: '82%', height: '47em', transform: 'translate(10em, 6em)', position: 'absolute'}}/>
+          <Image src={Background} style={{ width: '100%', height: 'auto', position: 'absolute'}}/>
+
         <FormContainer>
-          <Header textAlign='center' style={{color: 'white', letterSpacing: '1em', fontSize: '5em', transform: 'translate(-5.7em)'}} as='h1'>Om</Header>
-          <Header inverted as='h3' style={{ fontSize: '1.5em', transform: 'translate(-18em)'}}>Dashboard</Header>
-          <SegmentStyle centered inverted>
-            <Form inverted onSubmit={this.handleSubmit} textAlign='center'>
-              <FormInputStyle
-                autoFocus
-                required
-                name='email'
-                value={email}
-                placeholder='Email'
-                onChange={this.handleChange}
-                />
-              <FormInputStyle
-                required
-                name='password'
-                value={password}
-                placeholder='Password'
-                type='password'
-                onChange={this.handleChange}
-                />
-              <Form.Button type='submit' color='white' inverted>Log In</Form.Button>
-            </Form>
-          </SegmentStyle>
+          <CardStyle>
+              <Form inverted onSubmit={this.handleSubmit} textAlign='center' style={{ marginTop: '2em'}}>
+                <FormInputStyles
+                  autoFocus
+                  required
+                  name='email'
+                  value={email}
+                  placeholder='Email'
+                  onChange={this.handleChange}
+                  />
+                <FormInputStyles style={{ transform: 'translate(0, -3em)'}}
+                  required
+                  name='password'
+                  value={password}
+                  placeholder='Password'
+                  type='password'
+                  onChange={this.handleChange}
+                  />
+                <Form.Button type='submit' color='white' inverted style={{ transform: 'translate(1.5em, -2em)'}}>Log In</Form.Button>
+              </Form>
           <ScrollLock isActive={this.state.lockScroll} />
+          </CardStyle>
         </FormContainer>
       </div>
 
@@ -71,25 +70,21 @@ export default class ConnectedLogin extends React.Component {
 const FormContainer = styled.div`
   display: flex !important
   width: 100%
-  height: 70em
+  height: 50em
   justify-content: center !important
   align-items: center !important
-  transform: translate(14em, -20em)
 `
 
-const SubmitButton = styled.div`
-  width: 5em
-  height: 3em
-  margin-top: 1em
-  background: red
+const CardStyle = styled(Card)`
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH8oa0MKKgXhbw2zPtNcdDJkDmg5D_crzpHZgoChysAhxfaQo7') !important
+  height: 40%
 `
-const SegmentStyle = styled(Segment)`
+const FormInputStyles = styled(Form.Input)`
   display: flex !important
-  width: 30em !important
-  justifyContent: 'center'
-`
-const FormInputStyle = styled(Form.Input)`
-  display: flex !important
-  width: 25em !important 
-  transform: translate(2em) !important
+  width: 100%
+  height: 60%
+  justify-content: center !important
+  align-items: center !important
+  padding-left: 1em
+  padding-right: 1em
 `

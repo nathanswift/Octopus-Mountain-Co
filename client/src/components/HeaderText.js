@@ -26,11 +26,11 @@ const style = {
     width: '100vw',
     height: '100vh',
     position: 'fixed',
-    opacity: .9,
+    opacity: .5,
     margin: 'auto',
     top: '0vh',
     left: '0vw',
-    zIndex: -2,
+    zIndex: 1,
 };
 
 const onHover = () => {

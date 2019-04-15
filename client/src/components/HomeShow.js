@@ -15,38 +15,36 @@ class HomeShow extends React.Component {
 
   render() {
     return (
-      <Segment as={SegmentStyles} placeholder>
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '8m', alignItems: 'center' }}>
-          <Image as={OctoImage} src={Paws} />
-        </div>
-        <GridStyles stackable col={2}>
-          <Grid.Row>
-            <Grid.Column>
-            <Link to='/Works'>
-              <Button animated secondary>
-                <Button.Content visible>Works</Button.Content>
-                <Button.Content hidden>
-                  <Icon name='arrow left' />
-                </Button.Content>
-              </Button>
-            </Link>
-            </Grid.Column>
-            <Grid.Column>
-              <Link to='/Login'>
-                <Button animated >
-                  <Button.Content visible>Dashboard</Button.Content>
-                  <Button.Content hidden>
-                    <Icon name='arrow right' />
-                  </Button.Content>
-                </Button>
-              </Link>
+      <>
+        <Segment as={SegmentStyles} placeholder>
+          <GridStyles stackable col={2}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <Image as={OctoImage} src={Paws} />
+            </div>
+            <div style={{width: '20%'}}>
+              <Link to='/Works'>
+                  <ButtonStyle animated secondary inverted size='massive' style={{ zIndex: '2', marginBottom: '1em'}}>
+                    <Button.Content visible>Works</Button.Content>
+                    <Button.Content hidden>
+                      <Icon name='arrow right' />
+                    </Button.Content>
+                  </ButtonStyle>
+                </Link>
+                <Link to='/Login'>
+                    <ButtonStyle animated inverted size='massive' style={{ zIndex: '2'}}>
+                      <Button.Content visible>Dashboard</Button.Content>
+                      <Button.Content hidden>
+                        <Icon name='arrow left' />
+                      </Button.Content>
+                    </ButtonStyle>
+                  </Link>
+            </div>
+          </GridStyles>
               <SegmentExamplePlaceholderGrid />
-            </Grid.Column>
-          </Grid.Row>
-        </GridStyles>
-        <HeaderText as="h1" textAlign="center">O M Co.</HeaderText>
+          <HeaderText inverted as="h1" textAlign="center">Octopus Mountain Co.</HeaderText>
         <ScrollLock isActive={this.state.lockScroll} />
       </Segment>
+      </>
     );
   }
 }
@@ -64,7 +62,9 @@ const HeaderText = styled(Header)`
   display: flex !important
   justify-content: center !important
   align-items: flex-end !important
+  opacity: 1 !important
   font-family: 'Major Mono Display', monospace;
+  z-index: 2
 `
 
 const OctoImage = styled(Image)`
@@ -74,6 +74,7 @@ const OctoImage = styled(Image)`
   height: auto
   opacity: .85
   justify-content: center !important
+  z-index: 2
 `
 const GridStyles = styled(Grid)`
   width: auto
@@ -82,6 +83,12 @@ const GridStyles = styled(Grid)`
   flex-wrap: wrap !important
   justify-content: center !important
   align-items: center !important
+`
+const ButtonStyle = styled(Button)`
+  display: flex !important
+  background: transparent !important
+  border: none !important
+  box-shadow: none !important
 `
 
 
