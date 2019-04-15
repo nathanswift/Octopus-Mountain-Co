@@ -41,7 +41,7 @@ class HomeShow extends React.Component {
             </div>
           </GridStyles>
               <SegmentExamplePlaceholderGrid />
-          <HeaderText inverted as="h1" textAlign="center">Octopus Mountain Co.</HeaderText>
+          <HeaderText as="h1" textAlign="center">finding peace where the mountains meet the water - Om Co.</HeaderText>
         <ScrollLock isActive={this.state.lockScroll} />
       </Segment>
       </>
