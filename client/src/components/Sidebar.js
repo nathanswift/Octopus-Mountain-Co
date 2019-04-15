@@ -247,7 +247,7 @@ const Sidebar = styled.div`
   opacity: .89
   position: absolute !important
   width: 100%
-  z-index: 2
+  z-index: 3
 `
 const SideBarStyles = styled.div`
   display: flex
@@ -257,12 +257,13 @@ const SideBarStyles = styled.div`
 const MenuButton = styled.div`
   margin-top: 2em
   position: fixed !important
-  z-index: 2
+  z-index: 3
 `
 
 const SidebarTitle = styled.h2`
   margin-top: 3.5%
   margin-left: 9em
+  font-family: Major Mono Display, monospace; !important
 `
 
 const ButtonStyle = styled.div`
@@ -270,6 +271,7 @@ const ButtonStyle = styled.div`
   height: auto
   margin-top: 5%
   margin-right: 9.5%
+  font-family: Major Mono Display, monospace; !important
 `
 const LoginButton = styled.div`
   display: flex !important
@@ -277,6 +279,7 @@ const LoginButton = styled.div`
   margin-right: 1em
   width: 6em
   height: 6em
+  font-family: Major Mono Display, monospace; !important
 `
 
 export default withRouter(ConnectSidebars);

@@ -4,6 +4,7 @@ import HomeShow from '../components/HomeShow'
 import { Image, Segment } from 'semantic-ui-react'
 import { pulse, slideUp, fadeIn } from '../assets/keyframes/Keyframes'
 import { media } from '../themes/media'
+import BackgroundImg from '../assets/images/backgroundOm-min.jpg'
 
 export default class Home extends React.Component {
   state = {
@@ -46,7 +47,7 @@ export default class Home extends React.Component {
               :
               <>
                 <div>
-                  <Segment style={{ display: 'flex !important' }}>
+                  <Segment style={{ display: 'flex !important', background: 'transparent' }}>
                     <HeaderText as="h1" textAlign="center">Octopus Mountain Co.</HeaderText>
                   </Segment>
                 </div>
@@ -58,7 +59,7 @@ export default class Home extends React.Component {
                       this.state.scrollIcon ? 
                       null
                       :
-                      <ScrollIcon>
+                      <ScrollIcon style={{ background: 'transparent'}}>
                         <Image src='https://static.thenounproject.com/png/486805-200.png'/>
                       </ScrollIcon>
                     }
@@ -117,4 +118,7 @@ const ScrollIcon = styled(Image)`
 const PageBody = styled.div`
   width: 100%
   height: 80em
+  background: url(${BackgroundImg}) !important
+  background-size: cover !important
+  background-position: center !important
 `
