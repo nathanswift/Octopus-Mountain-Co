@@ -40,19 +40,21 @@ class Sidebars extends React.Component {
               </Grid>
             </Grid.Column>
             <Grid.Column>
-              <Header inverted as="h5">Story 0.1</Header>
-              <Header inverted as="h1">The OM Origin</Header>
-              <Header inverted textAlign="center" as="h4">
+              <HeaderStyle>Story 0.1</HeaderStyle>
+              <HeaderTitle>The OM Origin</HeaderTitle>
+              <HeaderStyle>
                 A long time ago in a far away land, a group of talented developers had the thought: why work for a development firm when we could build one ourselves?
                 It was no easy task but the developers pressed on hoping that one day they too could bring peace to peoples business solutions.
                 After many long nights the developers had done it! 
                 With a gleam in the eye of every developer they forged their alliance. An alliance that today we are proud to call the Octopus Mountain Co.
-              </Header>
-              Octopus Mountain Co is a small startup firm based out of Salt Lake City Utah. We crush deadlines and shred powder.
-              Never been afraid to go where no man has gone before. Doing the impossible. Okay, so we might be milking this a bit, but if you're
-              looking for quality design, functional mobile and web applications, and helping secure your place on the google hierarchy and raise
-              your presence on the web then we're your guys! Based out of Salt Lake City and as long the snow keeps coming down, we'll keep
-              coming up with creative solutions to your business needs. So Relax. We got this. Breath with Om.
+              </HeaderStyle>
+              <HeaderP>
+                Octopus Mountain Co is a small startup firm based out of Salt Lake City Utah. We crush deadlines and shred powder.
+                Never been afraid to go where no man has gone before. Doing the impossible. Okay, so we might be milking this a bit, but if you're
+                looking for quality design, functional mobile and web applications, and helping secure your place on the google hierarchy and raise
+                your presence on the web then we're your guys! Based out of Salt Lake City and as long the snow keeps coming down, we'll keep
+                coming up with creative solutions to your business needs. So Relax. We got this. Breath with Om.
+              </HeaderP>
             </Grid.Column>
             <Grid.Column>
               <ProfileStyle src={ProfileImage} />
@@ -212,9 +214,28 @@ class ConnectSidebars extends React.Component {
   }
 }
 
+const HeaderP = styled.div`
+  font-family: Arial
+  font-size: 10pt
+`
+
+const HeaderStyle = styled.div`
+  font-family: Arial
+  font-style: bold
+  font-size: 14pt
+`
+
+const HeaderTitle = styled.div`
+  font-family: Georgia
+  font-size: 40pt
+  margin-top: 1em
+  margin-bottom: 1em 
+`
+
 const ProfileStyle = styled(Image)`
-  height: 100%
-  width: 80%
+  height: 90%
+  width: 90%
+  margin-left: 2em
 `
 
 const InstagramFrontPic = styled(Image)`
@@ -224,6 +245,7 @@ const InstagramFrontPic = styled(Image)`
 const InstagramPicture = styled(Image)` 
   display: flex
   justify-content: space-between
+  margin-right: 2em
 `
 
 const socialMediaStyles = styled.div`

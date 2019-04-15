@@ -97,8 +97,11 @@ const HeaderText2 = styled.div`
   display: flex !important
   align-content: flex-end 
   postion: fixed 
+  color: white
+  opacity: .85
+  text-shadow: -.05em .05em .05em #2d2d2d
   justify-content: center
-  letter-spacing: .2em
+  letter-spacing: .1em
   margin-top: 4em !important
   width: 100% !important
 `
