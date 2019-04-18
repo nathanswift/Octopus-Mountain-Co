@@ -7,6 +7,7 @@ import { AuthProvider } from './providers/AuthProvider'
 import { initMiddleware } from 'devise-axios'
 import ReactGA from 'react-ga'
 import 'semantic-ui-css/semantic.min.css'
+import 'animate.css/animate.min.css'
 
 initMiddleware()
 
