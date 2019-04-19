@@ -3,8 +3,8 @@ import { AuthConsumer } from "../providers/AuthProvider"
 import { Link } from 'react-router-dom'
 import { Form, Segment, Header, Image, Card } from 'semantic-ui-react'
 import styled from 'styled-components'
-import Background from '../assets/images/AltaMap.png'
 import ScrollLock from 'react-scrolllock'
+import loginBG from '../assets/images/loginBG-min.jpg'
 
 class Login extends React.Component {
   state = { email: '', password: '', lockScroll: true }
@@ -24,8 +24,7 @@ class Login extends React.Component {
     const { email, password } = this.state
 
     return (
-      <div>
-          <Image src={Background} style={{ width: '100%', height: 'auto', position: 'absolute'}}/>
+      <div style={{ width: '100%', height: '60em', backgroundImage: `url(${loginBG})`, backgroundSize: 'cover !important', backgroundPosition: 'center' }}>
 
         <FormContainer>
           <CardStyle>
@@ -76,8 +75,9 @@ const FormContainer = styled.div`
 `
 
 const CardStyle = styled(Card)`
-  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH8oa0MKKgXhbw2zPtNcdDJkDmg5D_crzpHZgoChysAhxfaQo7') !important
+  background: black !important
   height: 40%
+  opacity: .6
 `
 const FormInputStyles = styled(Form.Input)`
   display: flex !important

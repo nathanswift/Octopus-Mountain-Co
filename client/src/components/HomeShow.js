@@ -1,6 +1,6 @@
 import React from 'react';
 import { Segment, Icon, Button, Image, Grid, Header } from 'semantic-ui-react'
-import SegmentExamplePlaceholderGrid from './HeaderText'
+import SegmentExamplePlaceholderGrid from './Video'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import ScrollLock from 'react-scrolllock'
@@ -17,13 +17,14 @@ class HomeShow extends React.Component {
     return (
       <>
         <Segment as={SegmentStyles} placeholder>
+        <HeaderText as="h1" textAlign="center" style={{ marginBottom: '5%'}}>octopus mountAin CO | development & design</HeaderText>
           <GridStyles stackable col={2}>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <Image as={OctoImage} src={Paws} />
             </div>
             <div style={{width: '20%'}}>
               <Link to='/Works'>
-                  <ButtonStyle animated secondary inverted size='massive' style={{ zIndex: '2', marginBottom: '1em'}}>
+                  <ButtonStyle animated inverted size='massive' style={{ zIndex: '2', marginBottom: '1em', color: '#AAC0EB', border: '5px solid #AAC0EB', borderRadius: '6%'}}>
                     <Button.Content visible>Works</Button.Content>
                     <Button.Content hidden>
                       <Icon name='arrow right' />
@@ -31,7 +32,7 @@ class HomeShow extends React.Component {
                   </ButtonStyle>
                 </Link>
                 <Link to='/Login'>
-                    <ButtonStyle animated inverted size='massive' style={{ zIndex: '2'}}>
+                    <ButtonStyle animated size='massive' style={{ zIndex: '2', color: '#AAC0EB', border: '5px solid #AAC0EB', borderRadius: '6%'}}>
                       <Button.Content visible>Dashboard</Button.Content>
                       <Button.Content hidden>
                         <Icon name='arrow left' />
@@ -41,7 +42,6 @@ class HomeShow extends React.Component {
             </div>
           </GridStyles>
               <SegmentExamplePlaceholderGrid />
-          <HeaderText as="h1" textAlign="center">finding peace where the mountains meet the water - Om Co.</HeaderText>
         <ScrollLock isActive={this.state.lockScroll} />
       </Segment>
       </>

@@ -48,7 +48,7 @@ export default class Home extends React.Component {
               <>
                 <div>
                   <Segment style={{ display: 'flex !important', background: 'transparent' }}>
-                    <HeaderText as="h1" textAlign="center">Octopus Mountain Co.</HeaderText>
+                    <HeaderText as="h1" textAlign="center">octopus mountAin CO.</HeaderText>
                   </Segment>
                 </div>
                 <div>

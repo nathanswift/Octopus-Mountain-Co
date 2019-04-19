@@ -3,11 +3,13 @@ import { Link, withRouter } from "react-router-dom"
 import styled from "styled-components"
 import ScrollLock from "react-scrolllock"
 import { AuthConsumer } from "../providers/AuthProvider"
-import MenuImage from "../assets/images/OmLogo.svg"
+import MenuImg from "../assets/images/OmLogo.svg"
 import { Image, Container, Grid, Icon, Segment, Header } from "semantic-ui-react"
 import ContactForm from "./ContactForm"
 import ProfileImage from '../assets/images/NoHair-min.png'
 import { media } from '../themes/media'
+import WhiteMenuImg from "../assets/images/OmLogo-white.png"
+import MountainImg from "../assets/images/mountains.png"
 
 class Sidebars extends React.Component {
   state = {
@@ -25,9 +27,11 @@ class Sidebars extends React.Component {
             <Grid.Column>
               <Grid rows={2} columns={3}>
                 <Grid.Row>
-                  <Image src="https://b-i.forbesimg.com/johnhall/files/2013/09/0318_biz-plans-eager-team_380x2781.jpg" />
+                  <Image src={MountainImg} 
+                    style={{ width: '100%', height: '95%', marginTop: '10%', marginLeft: '5%', paddingRight: '5%'}}
+                  />
                 </Grid.Row>
-                <Grid.Row columns={3}>
+                <Grid.Row columns={3} style={{ marginTop: '10%'}}>
                   <Grid.Column>
                     <InstagramPicture src="https://b-i.forbesimg.com/johnhall/files/2013/09/0318_biz-plans-eager-team_380x2781.jpg" />
                   </Grid.Column>
@@ -42,12 +46,12 @@ class Sidebars extends React.Component {
             </Grid.Column>
             <Grid.Column>
               <HeaderStyle>Story 0.1</HeaderStyle>
-              <HeaderTitle>The OM Origin</HeaderTitle>
+              <HeaderTitle>the om origin</HeaderTitle>
               <HeaderStyle>
-                A long time ago in a far away land, a group of talented developers had the thought: why work for a development firm when we could build one ourselves?
-                It was no easy task but the developers pressed on hoping that one day they too could bring peace to peoples business solutions.
-                After many long nights the developers had done it! 
-                With a gleam in the eye of every developer they forged their alliance. An alliance that today we are proud to call the Octopus Mountain Co.
+                A long time ago in a far away land, a group of talented developers had the thought - why work for a development firm when we could build one ourselves?
+                it was no easy task but the developers pressed on hoping that one day they too could bring peace to peoples business solutions.
+                after many long nights the developers had done it.
+                with a gleam in the eye of every developer they forged their alliance. an alliance that today we are proud to call the <br/> octopus Mountain CO.
               </HeaderStyle>
               <HeaderP>
                 Octopus Mountain Co is a small startup firm based out of Salt Lake City Utah. We crush deadlines and shred powder.
@@ -105,14 +109,14 @@ class Sidebars extends React.Component {
     if (user) {
       return (
         <LoginButton name="LogOut" onClick={this.onClick}>
-          LogOut
+          logOut
         </LoginButton>
       );
     } else {
       return (
         <Link to="/Login">
           <LoginButton onClick={this.toggleMenu} className="btn">
-            Login
+            login
           </LoginButton>
         </Link>
       );
@@ -133,9 +137,9 @@ class Sidebars extends React.Component {
                 onClick={this.toggleMenu}
                 as={Link}
                 to={"/"}
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none", color: "white", transform: "translate(2.5em, 3.5em)", zIndex: 2 }}
               >
-                Octopus Mountain Co
+                octopus mountain CO
               </SidebarTitle>
               <Grid row={2} col={1}>
               <Grid.Row centered>
@@ -146,10 +150,10 @@ class Sidebars extends React.Component {
                 className="btn"
                 onClick={() => this.handleServices()}
                 >
-                Services
+                services
               </ButtonStyle>
               <ButtonStyle onClick={() => this.handleContact()}>
-                Contact
+                contAct
               </ButtonStyle>
                 </Grid.Row>
                 <Grid.Row centered>
@@ -162,10 +166,18 @@ class Sidebars extends React.Component {
             onClick={this.toggleMenu}
             style={{ display: "flex !important" }}
             >
-            <Image
-              src={MenuImage}
-              style={{ height: "5em", width: "5em", marginLeft: "3em" }}
-              />
+           {
+             this.state.visible ?
+             <Image
+             src={WhiteMenuImg}
+             style={{ height: "5em", width: "5em", marginLeft: "3em" }}
+             />
+             :
+             <Image
+             src={MenuImg}
+             style={{ height: "5em", width: "5em", marginLeft: "3em" }}
+             />
+           }
           </MenuButton>
           {
             this.state.visible ?
@@ -221,13 +233,14 @@ const HeaderP = styled.div`
 `
 
 const HeaderStyle = styled.div`
-  font-family: Arial
+font-family: Major Mono Display, monospace; !important
   font-style: bold
-  font-size: 14pt
+  font-size: 8pt
+  padding-left: 5%
 `
 
 const HeaderTitle = styled.div`
-  font-family: Georgia
+  font-family: Major Mono Display, monospace; !important
   font-size: 40pt
   margin-top: 1em
   margin-bottom: 1em 

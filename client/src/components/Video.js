@@ -18,7 +18,7 @@ const SegmentExamplePlaceholderGrid = () => (
 )
 
 const videoOptions = {
-    src: 'https://res.cloudinary.com/dcxpy4puv/video/upload/v1555031708/Marine.mp4',
+    src: 'https://res.cloudinary.com/dcxpy4puv/video/upload/v1555637691/FoggyLandscape.mp4',
     autoPlay: true,
     loop: true,
     muted: true
@@ -27,7 +27,6 @@ const style = {
     width: '100vw',
     height: '100vh',
     position: 'fixed',
-    opacity: .3,
     margin: 'auto',
     top: '0vh',
     left: '0vw',
