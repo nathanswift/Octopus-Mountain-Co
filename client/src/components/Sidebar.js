@@ -7,6 +7,7 @@ import MenuImage from "../assets/images/OmLogo.svg"
 import { Image, Container, Grid, Icon, Segment, Header } from "semantic-ui-react"
 import ContactForm from "./ContactForm"
 import ProfileImage from '../assets/images/NoHair-min.png'
+import { media } from '../themes/media'
 
 class Sidebars extends React.Component {
   state = {
@@ -284,7 +285,7 @@ const MenuButton = styled.div`
 
 const SidebarTitle = styled.h2`
   margin-top: 3.5%
-  margin-left: 9em
+  margin-left: 1em
   font-family: Major Mono Display, monospace; !important
 `
 
@@ -299,7 +300,6 @@ const LoginButton = styled.div`
   display: flex !important
   margin-top: 2em
   margin-right: 1em
-  width: 6em
   height: 6em
   font-family: Major Mono Display, monospace; !important
 `
