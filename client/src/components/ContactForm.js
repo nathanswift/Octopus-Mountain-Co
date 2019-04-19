@@ -34,9 +34,10 @@ class ContactForm extends React.Component {
       <FormStyle success onSubmit={this.handleSubmit}>
         <br />
         <Container>
-          <h1 as={ContactTextStyles} style={{ textAlign: 'justify' }}>
+          <p as={ContactTextStyles} style={{ textAlign: 'justify', fontWeight: 'bolder' }}>
             Leave us an email explaining your next project, or how we can help, and we’ll get back to you as soon as possible
-          </h1>
+          </p>
+          <br />
           <Grid stackable>
             <Grid.Column style={{width: '90%'}}>
           <Form.Input
@@ -58,26 +59,10 @@ class ContactForm extends React.Component {
         </Grid>
         </Container>
       </FormStyle>
-      <IconGroup>
-      <div style={{float: 'right'}}>
-        <Icon name='facebook' />
-        <Icon name='twitter' />
-        <Icon name='instagram' />
-        <Icon name='globe' />
-      </div>
-      </IconGroup>
       </>
     );
   }
 }
-
-const IconGroup = styled.div`
-  padding-top: 10em
-  padding-right: 2em
-  ${media.phone`
-    padding-top: 2em
-  `}
-`
 
 const Btn = styled.div`
   transform: translatey(58%) !important
@@ -87,10 +72,10 @@ const Btn = styled.div`
 `
 
 const FormStyle = styled(Form)`
-  width: 55%
+  width: 80%
   margin-left: auto
   margin-right: auto
-  padding-top: 8em !important
+  padding-top: 3em !important
   font-family: Major Mono Display, monospace; !important
   z-index: -1 !important
   ${media.phone`

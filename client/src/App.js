@@ -5,7 +5,6 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
-import ContactForm from "./components/ContactForm";
 import Dashboard from "./pages/Dashboard";
 import Products from "./pages/Products";
 import Works from "./pages/Works";
@@ -53,7 +52,6 @@ export default class App extends React.Component {
             <Route exact path="/Works" component={Works} />
             <Route exact path="/WorksShow" component={WorksShow} />
             <Route exact path="/Contact" component={Contact} />
-            <Route exact path="/ContactForm" component={ContactForm} />
             <ProtectedRoute exact path="/Dashboard" component={Dashboard} />
             <ProtectedRoute exact path="/Profile" component={Profile} />
             <ProtectedRoute
