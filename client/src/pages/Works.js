@@ -54,21 +54,19 @@ const Works = (props) => {
     return(
       <ContainerStyles>
         { works.map( work => (
-          <Link
-            to={{ pathname: '/WorksShow' }}
+          <a
+            href={work.web_url}
+            target="blank"
           >
-            <ScrollAnimation
-              animateIn='flipInX'
-              animateOut='fadeOut'
+            <ScrollAnimation delay={170}
+              animateIn='slideInUp'
+              animateOut='slideOutDown'
             >
               <SegmentStyles placeholder className='work-enter`'>
-                <HeaderStyles>
-                  {work.name}
-                </HeaderStyles>
                 <ImageStyle fluid src={work.image_url} alt=""/>
               </SegmentStyles>
             </ScrollAnimation>
-          </Link>
+          </a>
         ))
       }
       </ContainerStyles>
@@ -86,7 +84,7 @@ z-index: 2
 transform: translate(0, 10em)
 `
 const ContainerStyles = styled(Container)`
-  opacity: .5
+  opacity: .9
 `
 const SegmentStyles = styled(Segment)`
   border: none !important

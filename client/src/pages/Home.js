@@ -5,6 +5,8 @@ import { Image, Segment } from 'semantic-ui-react'
 import { pulse, slideUp, fadeIn } from '../assets/keyframes/Keyframes'
 import { media } from '../themes/media'
 import BackgroundImg from '../assets/images/backgroundOm-min.jpg'
+import Mouse from '../assets/images/mouse-white.png'
+import Nature from "../assets/audio/himalaya-naturesounds.mp3"
 
 export default class Home extends React.Component {
   state = {
@@ -60,12 +62,15 @@ export default class Home extends React.Component {
                       null
                       :
                       <ScrollIcon style={{ background: 'transparent'}}>
-                        <Image src='https://static.thenounproject.com/png/486805-200.png'/>
+                        <Image src={Mouse}/>
                       </ScrollIcon>
                     }
                 </div>
               </>
             }
+        </div>
+        <div>
+          <audio ref="audio_tag" src={Nature} autoPlay controls style={{ display: 'hidden', transform: 'translate(0, 30em)'}}/>
         </div>
       </PageBody>
     )
