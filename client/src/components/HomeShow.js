@@ -5,26 +5,30 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import ScrollLock from 'react-scrolllock'
 import Paws from '../assets/images/octopuss-glow.png'
+import Nature from "../assets/audio/himalaya-naturesounds.mp3"
+import blackMenuImg from "../assets/images/OmMenuLogo.png"
 
 class HomeShow extends React.Component {
 
   state = {
     resizeNotifier: () => { },
-    lockScroll: true
+    lockScroll: true,
   }
 
   render() {
+
     return (
       <>
         <Segment as={SegmentStyles} placeholder>
-        <HeaderText as="h1" textAlign="center" style={{ marginBottom: '5%'}}>octopus mountAin CO | development & design</HeaderText>
+        <Image src={blackMenuImg} style={{ width: '40px', height: '40px'}}/>
+        <HeaderText as="h1" textAlign="center" style={{ marginBottom: '5%', zIndex: '1'}}>Octopus MountAin Co. | development & design</HeaderText>
           <GridStyles stackable col={2}>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Image as={OctoImage} src={Paws} />
+              <Image as={OctoImage} src={Paws} style={{ zIndex: '1'}}/>
             </div>
             <div style={{width: '20%'}}>
               <Link to='/Works'>
-                  <ButtonStyle animated inverted size='massive' style={{ zIndex: '2', marginBottom: '1em', color: '#AAC0EB', border: '5px solid #AAC0EB', borderRadius: '6%'}}>
+                  <ButtonStyle animated inverted size='massive' style={{ marginBottom: '1em', color: '#AAC0EB', border: '5px solid #AAC0EB', borderRadius: '6%'}}>
                     <Button.Content visible>Works</Button.Content>
                     <Button.Content hidden>
                       <Icon name='arrow right' />
@@ -32,17 +36,20 @@ class HomeShow extends React.Component {
                   </ButtonStyle>
                 </Link>
                 <Link to='/Login'>
-                    <ButtonStyle animated size='massive' style={{ zIndex: '2', color: '#AAC0EB', border: '5px solid #AAC0EB', borderRadius: '6%'}}>
+                    <ButtonStyle animated size='massive' style={{ color: '#AAC0EB', border: '5px solid #AAC0EB', borderRadius: '6%'}}>
                       <Button.Content visible>Dashboard</Button.Content>
                       <Button.Content hidden>
                         <Icon name='arrow left' />
                       </Button.Content>
                     </ButtonStyle>
                   </Link>
+                <div>
+                  <audio ref="audio_tag" src={Nature} autoPlay controls/>
+                </div>
             </div>
           </GridStyles>
               <SegmentExamplePlaceholderGrid />
-        <ScrollLock isActive={this.state.lockScroll} />
+          {/*<ScrollLock isActive={this.state.lockScroll} />*/}
       </Segment>
       </>
     );
@@ -63,8 +70,9 @@ const HeaderText = styled(Header)`
   justify-content: center !important
   align-items: flex-end !important
   opacity: 1 !important
-  font-family: 'Major Mono Display', monospace;
-  z-index: 2
+  font-family: Brothers OT, sans-serif;
+  font-weight: 700;
+  font-style: normal;
 `
 
 const OctoImage = styled(Image)`
@@ -74,7 +82,6 @@ const OctoImage = styled(Image)`
   height: auto
   opacity: .85
   justify-content: center !important
-  z-index: 2
 `
 const GridStyles = styled(Grid)`
   width: auto
@@ -90,6 +97,5 @@ const ButtonStyle = styled(Button)`
   border: none !important
   box-shadow: none !important
 `
-
 
 export default HomeShow;

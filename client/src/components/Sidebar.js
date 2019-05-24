@@ -3,115 +3,68 @@ import { Link, withRouter } from "react-router-dom"
 import styled from "styled-components"
 import ScrollLock from "react-scrolllock"
 import { AuthConsumer } from "../providers/AuthProvider"
-import MenuImg from "../assets/images/OmLogo.svg"
-import { Image, Container, Grid, Icon, Segment, Header } from "semantic-ui-react"
+import MenuImg from "../assets/xd/+.svg"
+import { Image, Grid, Icon, Header, Container } from "semantic-ui-react"
 import ContactForm from "./ContactForm"
-import ProfileImage from '../assets/images/NoHair-min.png'
-import { media } from '../themes/media'
-import WhiteMenuImg from "../assets/images/OmLogo-white.png"
-import MountainImg from "../assets/images/mountains.png"
+import About from "../components/About"
+import Services from "../components/Services"
+import SidebarHome from "../components/SidebarHome"
+import Paws from '../assets/images/octopuss-glow.png'
+import blackMenuImg from "../assets/images/OmMenuLogo.png"
+import SidebarLanding from '../assets/images/bgservices.svg'
 
 class Sidebars extends React.Component {
   state = {
     visible: false,
     sidebarText: 
-      <ContainerStyles inverted>Hey whats going on</ContainerStyles>,
+      <SidebarHome />,
       lockScroll: false
-    };
+    }
     
-    handleAbout = () => {
-      this.setState({
-        sidebarText: 
-        <ContainerStyles inverted>
-          <Grid columns={3}>
-            <Grid.Column>
-              <Grid rows={2} columns={3}>
-                <Grid.Row>
-                  <Image src={MountainImg} 
-                    style={{ width: '100%', height: '95%', marginTop: '10%', marginLeft: '5%', paddingRight: '5%'}}
-                  />
-                </Grid.Row>
-                <Grid.Row columns={3} style={{ marginTop: '10%'}}>
-                  <Grid.Column>
-                    <InstagramPicture src="https://b-i.forbesimg.com/johnhall/files/2013/09/0318_biz-plans-eager-team_380x2781.jpg" />
-                  </Grid.Column>
-                  <Grid.Column>
-                    <InstagramFrontPic src="https://b-i.forbesimg.com/johnhall/files/2013/09/0318_biz-plans-eager-team_380x2781.jpg" />
-                  </Grid.Column>
-                  <Grid.Column>
-                    <InstagramPicture src="https://b-i.forbesimg.com/johnhall/files/2013/09/0318_biz-plans-eager-team_380x2781.jpg" />
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-            <Grid.Column>
-              <HeaderStyle>Story 0.1</HeaderStyle>
-              <HeaderTitle>the om origin</HeaderTitle>
-              <HeaderStyle>
-                A long time ago in a far away land, a group of talented developers had the thought - why work for a development firm when we could build one ourselves?
-                it was no easy task but the developers pressed on hoping that one day they too could bring peace to peoples business solutions.
-                after many long nights the developers had done it.
-                with a gleam in the eye of every developer they forged their alliance. an alliance that today we are proud to call the <br/> octopus Mountain CO.
-              </HeaderStyle>
-              <HeaderP>
-                Octopus Mountain Co is a small startup firm based out of Salt Lake City Utah. We crush deadlines and shred powder.
-                Never been afraid to go where no man has gone before. Doing the impossible. Okay, so we might be milking this a bit, but if you're
-                looking for quality design, functional mobile and web applications, and helping secure your place on the google hierarchy and raise
-                your presence on the web then we're your guys! Based out of Salt Lake City and as long the snow keeps coming down, we'll keep
-                coming up with creative solutions to your business needs. So Relax. We got this. Breath with Om.
-              </HeaderP>
-            </Grid.Column>
-            <Grid.Column>
-              <ProfileStyle src={ProfileImage} />
-            </Grid.Column>
-          </Grid>
-        </ContainerStyles>,
-    });
-  };
+  handleAbout = () => {
+    this.setState({
+      sidebarText: 
+        <About />,
+    })
+  }
   
   handleServices = () => {
     this.setState({
       sidebarText: 
-      <ContainerStyles inverted>We offer full website services from Design to Implementation. Using full frameworks and database 
-      architecture we can build you're website from the ground up! Need to interact better with clients or your team? Need a great logo, graphic design, 
-      or to build your presence on social media? Want to build an app, revamp your website, or build one from scratch?
-      Have a great Idea that you want to take to a global platform? 
-       We can help. No project is too big!</ContainerStyles>,
-    });
-  };
+        <Services />,
+    })
+  }
 
   handleContact = () =>
     this.setState({
       sidebarText: 
-        <ContainerStyles>
-          <ContactForm toggleMenu={this.toggleMenu} />
-        </ContainerStyles>
-    });
+        <ContactForm toggleMenu={this.toggleMenu} />
+    })
 
   toggleMenu = () => {
     this.setState({
       visible: !this.state.visible,
       lockScroll: !this.state.lockScroll
-    });
+    })
     window.scrollTo(0, 0);
-  };
+  }
 
   onClick = () => {
-    this.toggleMenu();
-    this.props.auth.handleLogout(this.props.history);
-  };
+    this.toggleMenu()
+    this.props.auth.handleLogout(this.props.history)
+  }
 
   NavItems = () => {
     const {
       auth: { user }
-    } = this.props;
+    } = this.props
 
     if (user) {
       return (
         <LoginButton name="LogOut" onClick={this.onClick}>
           logOut
         </LoginButton>
-      );
+      )
     } else {
       return (
         <Link to="/Login">
@@ -119,100 +72,119 @@ class Sidebars extends React.Component {
             login
           </LoginButton>
         </Link>
-      );
+      )
     }
-  };
+  }
 
   render() {
-    // const { visible } = this.state
-
     return (
-        <Sidebar style={{ display: "flex !important" }}>
+      <>
+        <Sidebar style={ this.state.visible ? {display: "inline-block", background: 'white', zIndex: '3', position: 'absolute' } : {display: 'none'} }>
           {this.state.visible ? (
-            <SideBarStyles
-              style={{ display: "flex !important" }}
-              className="container"
-            >
-              <SidebarTitle
-                onClick={this.toggleMenu}
-                as={Link}
-                to={"/"}
-                style={{ textDecoration: "none", color: "white", transform: "translate(2.5em, 3.5em)", zIndex: 2 }}
-              >
-                octopus mountain CO
-              </SidebarTitle>
-              <Grid row={2} col={1}>
-              <Grid.Row centered>
-              <ButtonStyle className="btn" onClick={() => this.handleAbout()}>
-                About
-              </ButtonStyle>
-              <ButtonStyle
-                className="btn"
-                onClick={() => this.handleServices()}
-                >
-                services
-              </ButtonStyle>
-              <ButtonStyle onClick={() => this.handleContact()}>
-                contAct
-              </ButtonStyle>
+            <>
+              <Grid colums="equal" style={{zIndex: '3'}}>
+                <Grid.Row col={3}>
+                  <Grid.Column>
+                    <MenuButton
+                    onClick={this.toggleMenu}
+                    style={{ display: "flex !important", marginTop: '2%', width: '35px', height: '35px', zIndex: '4' }}
+                    >
+                      <Image
+                      src={MenuImg}
+                      style={{ display: 'inline-block', height: "5em", width: "5em", marginLeft: "3em", position: 'absolute', zIndex: '4'}} /* Something with a sticky posititon would be cool here - have paws sliding up into a fixed spot. - Or just an animation*/
+                      />
+                    </MenuButton>
+                  </Grid.Column>
+                  <Grid.Column width={8}>
+                    <Image src={Paws} style={{width: '600px', height: 'auto', zIndex: '4', transform: 'translate(-8em, -12.5em)'}}/>
+                  </Grid.Column>
+                  <Grid.Column>
+                  <Link as={ButtonStyle} to='/HomeShow' onClick={this.toggleMenu}>
+                    home
+                  </Link>
+                  <ButtonStyle className="btn" onClick={() => this.handleAbout()}>
+                    About
+                  </ButtonStyle>
+                  <ButtonStyle
+                    className="btn"
+                    onClick={() => this.handleServices()}
+                    >
+                    services
+                  </ButtonStyle>
+                  <Link to='/Works'>
+                    <ButtonStyle onClick={this.toggleMenu}>
+                      works
+                    </ButtonStyle>
+                  </Link>
+                  <ButtonStyle onClick={() => this.handleContact()}>
+                    contAct
+                  </ButtonStyle>
+                  { this.NavItems() }
+                  </Grid.Column>
                 </Grid.Row>
-                <Grid.Row centered>
-                  {this.state.sidebarText}
+                <Grid style={{ display: 'inline-block', background: `url(${SidebarLanding})`, width: '100%', height: '90%', position: 'absolute'}}>
+                  <Grid.Row>
+                  { this.state.sidebarText }
+                  </Grid.Row>
+                <Grid.Row col={2}>
+                  <Grid.Column width={6}>
+                    <Header> Recent Twitter Post</Header>
+                    <p>
+                      Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                      Nullam id dolor id nibh ultricies vehicula ut id elit.
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={6}>
+                    <Header> Recent Twitter Post</Header>
+                    <p>
+                      Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                      Nullam id dolor id nibh ultricies vehicula ut id elit.
+                    </p>
+                  </Grid.Column>
                 </Grid.Row>
-              </Grid>
-            </SideBarStyles>
-          ) : null}
+                <Grid.Row>
+                  <Grid.Column width={6}>
+                    <div> CopyRight @Octopus Mountain Co. </div>
+                  </Grid.Column>
+                  <Grid.Column width={6}>
+                      <Icon 
+                        color="black"
+                        name="facebook f"
+                        size="large"
+                        />
+                      <Icon 
+                        color="black"
+                        name="twitter"
+                        size="large"
+                        />
+                      <Icon 
+                        color="black"
+                        name="github alternate"
+                        size="large"
+                        />
+                      <Icon 
+                        color="black"
+                        name="linkedin square"
+                        size="large"
+                        />
+                  </Grid.Column>
+                </Grid.Row>
+                </Grid>
+              </Grid> 
+            </>
+          ) : 
           <MenuButton
-            onClick={this.toggleMenu}
-            style={{ display: "flex !important" }}
-            >
-           {
-             this.state.visible ?
-             <Image
-             src={WhiteMenuImg}
-             style={{ height: "5em", width: "5em", marginLeft: "3em" }}
-             />
-             :
-             <Image
-             src={MenuImg}
-             style={{ height: "5em", width: "5em", marginLeft: "3em" }}
-             />
-           }
-          </MenuButton>
-          {
-            this.state.visible ?
-            <Grid relaxed='very' rows={3}>
-              <Grid.Row>
-                {this.NavItems()}
-              </Grid.Row>
-              <Grid.Row>
-              </Grid.Row>
-              <Grid.Row>
-                <div as={socialMediaStyles} style={{ marginTop: '35em'}} rows={3}>
-                  <Icon 
-                    name="facebook f"
-                    size="large"
-                    />
-                  <Icon 
-                    name="twitter"
-                    size="large"
-                    />
-                  <Icon 
-                    name="github alternate"
-                    size="large"
-                    />
-                  <Icon 
-                    name="linkedin square"
-                    size="large"
-                    />
-                </div>
-               </Grid.Row>
-            </Grid>
-            :
-            null
+          onClick={this.toggleMenu}
+          style={{ display: "flex !important", zIndex: '1',  marginTop: '2%' }}
+          >
+              <Image
+              src={blackMenuImg}
+              style={{ height: "5em", width: "5em", marginLeft: "3em" }}
+              />
+            </MenuButton>
           }
-          <ScrollLock isActive={this.state.lockScroll} />
-        </Sidebar>
+          </Sidebar>
+        </>
     )
   }
 }
@@ -227,86 +199,22 @@ class ConnectSidebars extends React.Component {
   }
 }
 
-const HeaderP = styled.div`
-  font-family: Arial
-  font-size: 10pt
-`
-
-const HeaderStyle = styled.div`
-font-family: Major Mono Display, monospace; !important
-  font-style: bold
-  font-size: 8pt
-  padding-left: 5%
-`
-
-const HeaderTitle = styled.div`
-  font-family: Major Mono Display, monospace; !important
-  font-size: 40pt
-  margin-top: 1em
-  margin-bottom: 1em 
-`
-
-const ProfileStyle = styled(Image)`
-  height: 90%
-  width: 90%
-  margin-left: 2em
-`
-
-const InstagramFrontPic = styled(Image)`
-  width: 100%
-  height: 5em
-`
-const InstagramPicture = styled(Image)` 
-  display: flex
-  justify-content: space-between
-  margin-right: 2em
-`
-
-const socialMediaStyles = styled.div`
-  display: flex !important
-  width: 10%
-  margin-right: 3em
-`
-
-const ContainerStyles = styled(Container)`
-  width: 90%
-  height: 43em
-  margin-top: 3%
-  margin-bottom: 6.5% 
-  transform: translate(-5%)
-`
-
 const Sidebar = styled.div`
   display: flex !important
-  background-color: black
-  color: white !important
-  opacity: .89
+  color: black !important
   position: absolute !important
   width: 100%
-  z-index: 3
-`
-const SideBarStyles = styled.div`
-  display: flex
-  width: 100% 
-  height: auto
+  height: 100%
 `
 const MenuButton = styled.div`
-  margin-top: 2em
   position: fixed !important
-  z-index: 3
-`
-
-const SidebarTitle = styled.h2`
-  margin-top: 3.5%
-  margin-left: 1em
-  font-family: Major Mono Display, monospace; !important
 `
 
 const ButtonStyle = styled.div`
-  display: flex !important
+  display: inline-block
   height: auto
   margin-top: 5%
-  margin-right: 9.5%
+  float: left !important
   font-family: Major Mono Display, monospace; !important
 `
 const LoginButton = styled.div`
@@ -317,4 +225,4 @@ const LoginButton = styled.div`
   font-family: Major Mono Display, monospace; !important
 `
 
-export default withRouter(ConnectSidebars);
+export default withRouter(ConnectSidebars)

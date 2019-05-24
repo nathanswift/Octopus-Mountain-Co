@@ -45,36 +45,36 @@ export default class App extends React.Component {
     return (
       <div>
         <FetchUser>
-          <Sidebar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/HomeShow" component={HomeShow} />
-            <Route exact path="/Works" component={Works} />
-            <Route exact path="/WorksShow" component={WorksShow} />
-            <Route exact path="/Contact" component={Contact} />
-            <ProtectedRoute exact path="/Dashboard" component={Dashboard} />
-            <ProtectedRoute exact path="/Profile" component={Profile} />
-            <ProtectedRoute
-              exact
-              path="/Dashboard/Messages"
-              component={DashboardMessages}
-            />
-            <ProtectedRoute
-              exact
-              path="/Dashboard/Analytics"
-              component={DashboardAnalytics}
-            />
-            <ProtectedRoute
-              exact
-              path="/Dashboard/Payments"
-              component={DashboardPayments}
-            />
-            <ProtectedRoute exact path="/ContactList" component={ContactList} />
-            <Route exact path="/Login" component={Login} />
-            <Route exact path="/Register" component={Register} />
-            <Route exact path="/Products" component={Products} />
-            <Route component={NoMatch} />
-          </Switch>
+            <Switch>
+              <Route exact path="/Sidebar" component={Sidebar} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/HomeShow" component={HomeShow} />
+              <Route exact path="/Works" component={Works} />
+              <Route exact path="/WorksShow" component={WorksShow} />
+              <Route exact path="/Contact" component={Contact} />
+              <ProtectedRoute exact path="/Dashboard" component={Dashboard} />
+              <ProtectedRoute exact path="/Profile" component={Profile} />
+              <ProtectedRoute
+                exact
+                path="/Dashboard/Messages"
+                component={DashboardMessages}
+              />
+              <ProtectedRoute
+                exact
+                path="/Dashboard/Analytics"
+                component={DashboardAnalytics}
+              />
+              <ProtectedRoute
+                exact
+                path="/Dashboard/Payments"
+                component={DashboardPayments}
+              />
+              <ProtectedRoute exact path="/ContactList" component={ContactList} />
+              <Route exact path="/Login" component={Login} />
+              <Route exact path="/Register" component={Register} />
+              <Route exact path="/Products" component={Products} />
+              <Route component={NoMatch} />
+            </Switch>
           {/* <Footer /> */}
         </FetchUser>
       </div>

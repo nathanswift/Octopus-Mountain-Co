@@ -30,7 +30,6 @@ const style = {
     margin: 'auto',
     top: '0vh',
     left: '0vw',
-    zIndex: 1,
 };
 
 

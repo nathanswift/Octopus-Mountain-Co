@@ -31,34 +31,37 @@ class ContactForm extends React.Component {
     const { email, message } = this.state;
     return (
       <>
-      <FormStyle success onSubmit={this.handleSubmit}>
-        <br />
-        <Container>
-          <p as={ContactTextStyles} style={{ textAlign: 'justify', fontWeight: 'bolder' }}>
-            Leave us an email explaining your next project, or how we can help, and we’ll get back to you as soon as possible
-          </p>
-          <br />
-          <Grid stackable>
-            <Grid.Column style={{width: '90%'}}>
-          <Form.Input
-            placeholder="Email Address"
-            name="email"
-            onChange={this.handleChange}
-            value={email}
-            />
-          <Form.TextArea
-            placeholder="Message"
-            name="message"
-            onChange={this.handleChange}
-            value={message}
-            />
-            </Grid.Column>
-            <Grid.Column as={Btn}>
-          <Button onClick={this.handleSubmit}>Send</Button>
-          </Grid.Column>
-        </Grid>
-        </Container>
-      </FormStyle>
+        <ContainerStyles>
+
+          <FormStyle success onSubmit={this.handleSubmit}>
+            <br />
+            <Container>
+              <p as={ContactTextStyles} style={{ textAlign: 'justify', fontWeight: 'bolder' }}>
+                Leave us an email explaining your next project, or how we can help, and we’ll get back to you as soon as possible
+              </p>
+              <br />
+              <Grid stackable>
+                <Grid.Column style={{width: '90%'}}>
+                  <Form.Input
+                    placeholder="Email Address"
+                    name="email"
+                    onChange={this.handleChange}
+                    value={email}
+                    />
+                  <Form.TextArea
+                    placeholder="Message"
+                    name="message"
+                    onChange={this.handleChange}
+                    value={message}
+                    />
+                </Grid.Column>
+                <Grid.Column as={Btn}>
+                  <Button onClick={this.handleSubmit}>Send</Button>
+                </Grid.Column>
+              </Grid>
+            </Container>
+          </FormStyle>
+        </ContainerStyles>
       </>
     );
   }
@@ -69,6 +72,13 @@ const Btn = styled.div`
   ${media.phone`
     transform: translatey(0) !important
   `}
+`
+const ContainerStyles = styled(Container)`
+  width: 90%
+  height: 43em
+  margin-top: 3%
+  margin-bottom: 6.5% 
+  transform: translate(-5%)
 `
 
 const FormStyle = styled(Form)`
