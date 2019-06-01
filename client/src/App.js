@@ -45,8 +45,8 @@ export default class App extends React.Component {
     return (
       <div>
         <FetchUser>
+          <Sidebar />
             <Switch>
-              <Route exact path="/Sidebar" component={Sidebar} />
               <Route exact path="/" component={Home} />
               <Route exact path="/HomeShow" component={HomeShow} />
               <Route exact path="/Works" component={Works} />
