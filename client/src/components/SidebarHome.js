@@ -10,11 +10,11 @@ const SidebarHome = () => {
   return(
     <div style={{ width: '100%', marginTop: '10%'}}>
       <ContainerStyles>
-        <Image src={blackMenuImg} alignItems='center' style={{ display: 'flex', width: '40px', height: '40px', alignItems: 'center'}}/>
+        <Image src={blackMenuImg} centered style={{ display: 'flex', width: '40px', height: '40px' }}/>
         <Header 
           as="h2"
           style={{
-            fontFamily: 'Brothers OT, sans-serif',
+            fontFamily: 'Brothers OT, regular',
             fontWeight: 700,
             fontStyle: 'normal',
             color: 'white'
@@ -25,7 +25,7 @@ const SidebarHome = () => {
         <Header 
           as="h1" 
           style={{ 
-            fontFamily: 'Brothers OT, sans-serif',
+            fontFamily: 'Brothers OT, regular',
             fontWeight: 700,
             fontStyle: 'normal'
             }}> 
@@ -35,7 +35,7 @@ const SidebarHome = () => {
         <Header 
         as="h1"
         style={{ 
-          fontFamily: 'Brothers OT, sans-serif',
+          fontFamily: 'Brothers OT, regular',
           fontWeight: 700,
           fontStyle: 'normal',
           color: `${colors.gold}`

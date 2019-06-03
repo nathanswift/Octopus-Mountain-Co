@@ -2,6 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import ScrollLock from "react-scrolllock";
+import { Button } from 'semantic-ui-react'
 import { AuthConsumer } from "../providers/AuthProvider";
 import MenuImg from "../assets/xd/+.svg";
 import {
@@ -19,6 +20,7 @@ import SidebarHome from "../components/SidebarHome";
 import Paws from "../assets/images/octopuss-glow.png";
 import blackMenuImg from "../assets/images/OmMenuLogo.png";
 import SidebarLanding from "../assets/images/bgservices.svg";
+import colors from "../themes/colors"
 
 class Sidebars extends React.Component {
   state = {
@@ -71,13 +73,25 @@ class Sidebars extends React.Component {
     } else {
       return (
         <Link to="/Login">
-          <LoginButton
+          <button
             onClick={this.toggleMenu}
             className="btn"
-            style={{ color: "#141414", paddingTop: "3%" }}
+            style={{ 
+              color: `${colors.gold}`, 
+              transform: "translate(-10em)", 
+              border: "2px solid",
+              borderRadius: "2px",
+              padding: "15% 50% 15% 50%",
+              borderColor: `${colors.gold}`,
+              fontFamily: "Arial, sans-serif",
+              fontWeight: "bold",
+              fontSize: "10px",
+              textTransform: "uppercase",
+              marginTop: "22px"
+            }}
           >
             login
-          </LoginButton>
+          </button>
         </Link>
       );
     }
@@ -142,7 +156,7 @@ class Sidebars extends React.Component {
                       display: "flex",
                       justifyContent: "flex-start",
                       flexDirection: "row",
-                      marginLeft: "35%"
+                      marginLeft: "35%",
                     }}
                   >
                     <Link
@@ -151,8 +165,13 @@ class Sidebars extends React.Component {
                       onClick={this.toggleMenu}
                       style={{
                         color: "#141414",
-                        paddingTop: "72%",
-                        paddingRight: "20%"
+                        marginTop: "30px",
+                        paddingRight: "20%",
+                        transform: "translate(-24em)",
+                        fontFamily: "Arial, sans-serif",
+                        fontWeight: "bold",
+                        fontSize: "10px",
+                        textTransform: "uppercase"
                       }}
                     >
                       home
@@ -160,14 +179,30 @@ class Sidebars extends React.Component {
                     <ButtonStyle
                       className="btn"
                       onClick={() => this.handleAbout()}
-                      style={{ paddingTop: "70%", paddingRight: "20%" }}
+                      style={{ 
+                        marginTop: "30px", 
+                        paddingRight: "20%", 
+                        transform: "translate(-21em)", 
+                        fontFamily: "Arial, sans-serif", 
+                        fontWeight: "bold", 
+                        fontSize: "10px",
+                        textTransform: "uppercase" 
+                      }}
                     >
                       About
                     </ButtonStyle>
                     <ButtonStyle
                       className="btn"
                       onClick={() => this.handleServices()}
-                      style={{ paddingTop: "70%", paddingRight: "20%" }}
+                      style={{ 
+                        marginTop: "30px", 
+                        paddingRight: "20%", 
+                        transform: "translate(-18em)", 
+                        fontFamily: "Arial, sans-serif", 
+                        fontWeight: "bold", 
+                        fontSize: "10px",
+                        textTransform: "uppercase"
+                      }}
                     >
                       services
                     </ButtonStyle>
@@ -175,9 +210,14 @@ class Sidebars extends React.Component {
                       <ButtonStyle
                         onClick={this.toggleMenu}
                         style={{
-                          paddingTop: "43%",
+                          marginTop: "30px",
                           paddingRight: "20%",
-                          color: "#141414"
+                          color: "#141414",
+                          transform: "translate(-15em)",
+                          fontFamily: "Arial, sans-serif",
+                          fontWeight: "bold",
+                          fontSize: "10px",
+                          textTransform: "uppercase"
                         }}
                       >
                         works
@@ -185,7 +225,15 @@ class Sidebars extends React.Component {
                     </Link>
                     <ButtonStyle
                       onClick={() => this.handleContact()}
-                      style={{ paddingTop: "70%", paddingRight: "10%" }}
+                      style={{ 
+                        marginTop: "30px", 
+                        paddingRight: "20%", 
+                        transform: "translate(-12em)", 
+                        fontFamily: "Arial, sans-serif", 
+                        fontWeight: "bold", 
+                        fontSize: "10px",
+                        textTransform: "uppercase"
+                      }}
                     >
                       contAct
                     </ButtonStyle>
@@ -289,9 +337,9 @@ const ButtonStyle = styled.div`
 `;
 const LoginButton = styled.div`
   display: flex !important
-  margin-top: 2em
+  margin-top: 1.8em
   margin-right: 1em
-  height: 6em
+  height: 2em
   font-family: Major Mono Display, monospace; !important
 `;
 
