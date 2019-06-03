@@ -7,60 +7,80 @@ import colors from '../themes/colors'
 
 const SidebarHome = () => {
 
-  return(
-    <div style={{ width: '100%', marginTop: '10%'}}>
-      <ContainerStyles>
-        <Image src={blackMenuImg} centered style={{ display: 'flex', width: '40px', height: '40px' }}/>
-        <Header 
-          as="h2"
+  return (
+    <div style={{ width: '100%', marginTop: '10%' }}>
+      <Image src={blackMenuImg} centered style={{ display: 'flex', width: '62px', height: '62px', justifyContent: 'center', marginTop: '3%' }} />
+      <Container text style={{
+        transform: 'translateY(40px)'
+      }}>
+        <Header
+          as="h1"
           style={{
-            fontFamily: 'Brothers OT, regular',
+            fontFamily: 'Brothers, regular',
             fontWeight: 700,
             fontStyle: 'normal',
-            color: 'white'
+            color: 'white',
           }}
-          > 
-            Hi, we're 
-          </Header>
-        <Header 
-          as="h1" 
-          style={{ 
-            fontFamily: 'Brothers OT, regular',
+          textAlign="center"
+        >
+          Hi, we're
+        <span style={{ opacity: '0' }}>s</span>
+          <span style={{
+            fontFamily: 'Brothers, regular',
             fontWeight: 700,
-            fontStyle: 'normal'
-            }}> 
-            Octopus Mountain Co 
+            fontStyle: 'normal',
+            color: "black",
+          }}>
+            Octopus Mountain Co
+        </span>
         </Header>
-        <br/>
-        <Header 
-        as="h1"
-        style={{ 
-          fontFamily: 'Brothers OT, regular',
-          fontWeight: 700,
-          fontStyle: 'normal',
-          color: `${colors.gold}`
-          }}> 
-          a design and development firm 
+        <Header
+          as="h1"
+          style={{
+            fontFamily: 'Brothers, regular',
+            fontWeight: 700,
+            fontStyle: 'normal',
+            color: `${colors.gold}`,
+            transform: 'translateY(-30px)',
+          }}
+          textAlign="center"
+        >
+          a design and development firm <br />
           based out of Salt Lake City, UT.
-          </Header>
-      </ContainerStyles>
-      <div style={{ display: 'flex', width: '100%', height: 'auto', justifyContent: 'center', marginTop: '2%'}}>
-        <p style={{ display: 'inline-block', width: '50%', height: 'auto', textAlign: 'center', verticalAlign: 'middle'}}>
-          We build web & mobile applications & design hi-fidelity UI/UX renders.
-          We use quality touches of modern style and 
-          nerd-out to optimize functionality, bringing you peace of mind in all your online business decisions.
-          From SEO, Data Analytics, E-Commerce, graphic design, UI/UX, full stack development, and even social media branding, we have you covered.
+      </Header>
+      </Container>
+        <div style={{ display: 'flex', height: 'auto', justifyContent: 'center', marginTop: '2%' }}>
+          <p style={{
+            display: 'inline-block',
+            width: '50%',
+            height: 'auto',
+            textAlign: 'center',
+            verticalAlign: 'middle',
+            fontFamily: 'Arial, regular',
+            fontSize: '13.5px',
+            color: `${colors.w}`,
+            transform: 'translateY(-15px)',
+            fontStyle: 'normal',
+            fontWeight: 500
+          }}>
+            We build web & mobile applications & design hi-fidelity UI/UX renders.
+            <br />
+            We use quality touches of modern style and
+            <br />
+            nerd-out to optimize functionality, bringing you peace of mind in all your
+            <br />
+            online business decisions.
+            <br />
+            From SEO, Data Analytics, E-Commerce, graphic design, UI/UX, full
+            <br />
+            stack development, and even social media branding, we have you
+            <br />
+            covered.
         </p>
-      </div>
+        </div>
     </div>
   )
 }
 
-const ContainerStyles = styled(Container)`
-  display: flex !important
-  justify-content: center
-  width: 100% !important
-  height: auto !important
-`
 
 export default SidebarHome
