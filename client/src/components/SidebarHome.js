@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Container, Image, Header } from 'semantic-ui-react'
+import { Container, Image, Header, Icon } from 'semantic-ui-react'
 import blackMenuImg from "../assets/images/OmMenuLogo.png"
 import { AuthConsumer } from '../providers/AuthProvider';
 import colors from '../themes/colors'
@@ -11,7 +11,7 @@ const SidebarHome = () => {
     <div style={{ width: '100%', marginTop: '10%' }}>
       <Image src={blackMenuImg} centered style={{ display: 'flex', width: '62px', height: '62px', justifyContent: 'center', marginTop: '3%' }} />
       <Container text style={{
-        transform: 'translateY(40px)'
+        transform: 'translateY(20px)'
       }}>
         <Header
           as="h1"
@@ -59,9 +59,13 @@ const SidebarHome = () => {
             fontFamily: 'Arial, regular',
             fontSize: '13.5px',
             color: `${colors.w}`,
-            transform: 'translateY(-15px)',
+            transform: 'translateY(-28px)',
             fontStyle: 'normal',
-            fontWeight: 500
+            fontWeight: 500,
+            borderBottom: '1px solid', 
+            borderColor: `${colors.gold}`,
+            borderWidth: '75%',
+            paddingBottom: '20px'
           }}>
             We build web & mobile applications & design hi-fidelity UI/UX renders.
             <br />
@@ -76,6 +80,8 @@ const SidebarHome = () => {
             stack development, and even social media branding, we have you
             <br />
             covered.
+            <br />
+            <Icon centered name="user" color="black" circular size="large" />
         </p>
         </div>
     </div>

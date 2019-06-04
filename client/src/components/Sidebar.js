@@ -244,24 +244,32 @@ class Sidebars extends React.Component {
                   style={{
                     display: "inline-block",
                     background: `url(${SidebarLanding})`,
-                    width: "100%",
-                    height: "90%",
+                    width: "105%",
+                    height: "105%",
                     position: "absolute"
                   }}
                 >
                   <Grid.Row>{this.state.sidebarText}</Grid.Row>
                   <Grid.Row col={2}>
-                    <Grid.Column width={6}>
-                      <Header> Recent Twitter Post</Header>
-                      <p>
+                    <Grid.Column width={6} style={{
+                      transform: 'translate(80px, -30px)'
+                    }}>
+                      <Header>Recent Twitter Post</Header>
+                      <p style={{
+                        color: '#FFFFFF'
+                      }}>
                         Cum sociis natoque penatibus et magnis dis parturient
                         montes, nascetur ridiculus mus. Nullam id dolor id nibh
                         ultricies vehicula ut id elit.
                       </p>
                     </Grid.Column>
-                    <Grid.Column width={6}>
+                    <Grid.Column width={6} style={{
+                      transform: 'translate(250px, -30px)'
+                    }}>
                       <Header> Recent Twitter Post</Header>
-                      <p>
+                      <p style={{
+                        color: '#FFFFFF'
+                      }}>
                         Cum sociis natoque penatibus et magnis dis parturient
                         montes, nascetur ridiculus mus. Nullam id dolor id nibh
                         ultricies vehicula ut id elit.
