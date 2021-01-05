@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "animate.css": "^3.7.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "body-scroll-lock": "^2.6.1",
     "devise-axios": "^1.0.24",
     "react": "^16.8.4",
